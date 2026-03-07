@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import GaleriaKotow from './pages/GaleriaKotow';
 import Home from './pages/Home';
 import Adoptuj from './pages/Adoptuj';
 import Adopcja from './pages/Adopcja';
@@ -22,7 +22,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/adoptuj" element={<Adoptuj />} />
+          <Route path="/adoptuj/:id" element={<Adoptuj />} />
           <Route path="/adopcja" element={<Adopcja />} />
+          <Route path="/galeria-kotow" element={<GaleriaKotow />} />
           <Route path="/adopcja-wirtualna" element={<AdopcjaWirtualna />} />
           <Route path="/dom-tymczasowy" element={<DomTymczasowy />} />
           <Route path="/kontakt" element={<Kontakt />} />
