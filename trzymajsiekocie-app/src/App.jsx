@@ -7,9 +7,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 xl:px-8 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer">
-          <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-            TK
-          </div>
+          <img src="/assets/image.png" alt="Trzymaj Się, Kocie!" className="w-8 h-8" />
           <span className="text-xl font-bold text-gray-800 uppercase tracking-wide">
             Trzymaj Się, Kocie!
           </span>
@@ -45,7 +43,7 @@ const Footer = () => {
         {/* Kolumna 1 */}
         <div className="space-y-4">
           <div className="flex items-center gap-2 mb-6">
-             <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm">TK</div>
+             <img src="/assets/image.png" alt="Trzymaj Się, Kocie!" className="w-8 h-8" />
              <span className="text-lg font-bold text-white uppercase tracking-wider">Trzymaj Się, Kocie!</span>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed">
