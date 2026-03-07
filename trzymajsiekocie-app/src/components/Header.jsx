@@ -6,13 +6,13 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 xl:px-8 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 cursor-pointer">
-          <img src="/src/assets/image.png" alt="Trzymaj Się, Kocie!" className="w-[53px] h-[150px]" />
-        </Link>
+        {/* Logo + Nawigacja */}
+        <div className="flex items-center gap-8">
+          <Link to="/" className="flex items-center gap-2 cursor-pointer">
+            <img src="/src/assets/logo_navbar.png" alt="Trzymaj Się, Kocie!" className="h-14 w-auto" />
+          </Link>
 
-        {/* Nawigacja */}
-        <nav className="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-700">
+          <nav className="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-700">
           <Link to="/" className="hover:text-orange-500 transition-colors">Strona główna</Link>
 
           <NavDropdown label="Adoptuj">
@@ -29,7 +29,8 @@ export default function Header() {
             <DropdownLink to="/faq">FAQ</DropdownLink>
             <DropdownLink to="/wsparcie">Wsparcie</DropdownLink>
           </NavDropdown>
-        </nav>
+          </nav>
+        </div>
 
         {/* Social Media */}
         <div className="hidden xl:flex items-center space-x-4 text-gray-500">

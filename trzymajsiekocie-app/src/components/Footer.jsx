@@ -8,8 +8,9 @@ export default function Footer() {
         
         {/* Kolumna 1 */}
         <div className="space-y-4">
-          <div className="flex items-center gap-2 mb-6">
-             <span className="text-lg font-bold text-white uppercase tracking-wider">Trzymaj Się, Kocie!</span>
+          <div className="flex items-center gap-3 mb-6">
+            <img src="/src/assets/logo_footer.png" alt="Trzymaj Się, Kocie!" className="h-32 w-auto" />
+            {/* <span className="text-lg font-bold text-white uppercase tracking-wider">Trzymaj Się, Kocie!</span> */}
           </div>
           <p className="text-sm text-gray-400 leading-relaxed">
             Nasze działania mają na celu ograniczenie kociej bezdomności.
