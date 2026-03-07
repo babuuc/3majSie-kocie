@@ -7,7 +7,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 xl:px-8 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer">
-          <img src="/assets/image.png" alt="Trzymaj Się, Kocie!" className="w-8 h-8" />
+          <img src="/src/assets/image.png" alt="Trzymaj Się, Kocie!" className="w-8 h-8" />
           <span className="text-xl font-bold text-gray-800 uppercase tracking-wide">
             Trzymaj Się, Kocie!
           </span>
@@ -43,7 +43,7 @@ const Footer = () => {
         {/* Kolumna 1 */}
         <div className="space-y-4">
           <div className="flex items-center gap-2 mb-6">
-             <img src="/assets/image.png" alt="Trzymaj Się, Kocie!" className="w-8 h-8" />
+             <img src="/src/assets/image.png" alt="Trzymaj Się, Kocie!" className="w-8 h-8" />
              <span className="text-lg font-bold text-white uppercase tracking-wider">Trzymaj Się, Kocie!</span>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed">
