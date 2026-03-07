@@ -1,4 +1,48 @@
 {
+  "categories": [
+    {
+      "id": "wszystkie",
+      "name": "Wszystkie",
+      "color": "#FF6B6B",
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=wszystkie"
+    },
+    {
+      "id": "dwupaki",
+      "name": "Dwupaki",
+      "color": "#4ECDC4",
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=dwupaki"
+    },
+    {
+      "id": "emeryci",
+      "name": "Emeryci",
+      "color": "#FFE66D",
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=emeryci"
+    },
+    {
+      "id": "jedynacy",
+      "name": "Jedynacy",
+      "color": "#A8E6CF",
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=jedynacy"
+    },
+    {
+      "id": "kociaki",
+      "name": "Kociaki",
+      "color": "#FF8B94",
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=kociaki"
+    },
+    {
+      "id": "pingwinki",
+      "name": "Pingwinki",
+      "color": "#C7CEEA",
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=pingwinki"
+    },
+    {
+      "id": "starszaki",
+      "name": "Starszaki",
+      "color": "#FFDAC1",
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=starszaki"
+    }
+  ],
   "koty": [
     {
       "id": 1,
@@ -16,6 +60,8 @@
         "/images/koty/bialek2.jpg",
         "/images/koty/bialek3.jpg"
       ],
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=bialek-1",
+      "wirtualniOpiekunowie": ["Ania K.", "Marek i Ola", "Kasia W."],
       "historia": "Białek to idealny towarzysz dla spokojnych dorosłych kotów. Jest delikatny, nienachalny, ale z radością nawiązuje kocie przyjaźnie. Ma w sobie coś wyjątkowego – lubią go nawet te najbardziej nieśmiałe futrzaki. Z tego powodu nowy dom Białka musi mieć innego kota – koci kompan to dla niego absolutna konieczność!\n\nW relacjach z ludźmi jest na początku nieco ostrożny i potrzebuje czasu, by zaufać, ale gdy to nastąpi, odkryjesz w nim wiernego, kochającego przyjaciela.\n\nBiałek jest w pełni zdrowy i gotowy, by zamieszkać w nowym, troskliwym domu.\n\nBiałek szuka kochającego domu niewychodzącego z odpowiednimi zabezpieczeniami."
     },
     {
@@ -32,6 +78,8 @@
       "images": [
         "/images/koty/mruczek1.jpg"
       ],
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=mruczek-2",
+      "wirtualniOpiekunowie": [],
       "historia": "Mruczek to mały energiczny kociak pełen życia. Uwielbia zabawę i jest bardzo towarzyski. Idealny dla rodziny z dziećmi."
     },
     {
@@ -48,6 +96,8 @@
       "images": [
         "/images/koty/puszek1.jpg"
       ],
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=puszek-3",
+      "wirtualniOpiekunowie": ["Fundacja Mruczek", "Basia N."],
       "historia": "Puszek to spokojny senior, który szuka ciepłego domu na jesień życia. Kocha drzapki i długie drzemki w słońcu."
     },
     {
@@ -64,6 +114,8 @@
       "images": [
         "/images/koty/filemon1.jpg"
       ],
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=filemon-4",
+      "wirtualniOpiekunowie": ["Joanna S."],
       "historia": "Filemon to piękny dwukolorowy kot o łagodnym usposobieniu. Lubi towarzystwo zarówno ludzi, jak i innych zwierząt."
     },
     {
@@ -80,6 +132,8 @@
       "images": [
         "/images/koty/luna1.jpg"
       ],
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=luna-5",
+      "wirtualniOpiekunowie": [],
       "historia": "Luna to niezależna kotka, która preferuje być jedynym pupilem w domu. Dla odpowiedniej osoby będzie wiernym kompanem."
     },
     {
@@ -96,6 +150,8 @@
       "images": [
         "/images/koty/bella1.jpg"
       ],
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=bella-6",
+      "wirtualniOpiekunowie": ["Ewa i Piotr", "Natalia L.", "Koci Klub Krakow"],
       "historia": "Bella to delikatna kotka w średnim wieku, która uwielbia przytulanie się i głaskanie."
     },
     {
@@ -112,6 +168,8 @@
       "images": [
         "/images/koty/simba1.jpg"
       ],
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=simba-7",
+      "wirtualniOpiekunowie": ["Michał P."],
       "historia": "Simba to biało-czarny kot przypominający pingwinka. Jest towarzyski i przyjazny wobec wszystkich."
     },
     {
@@ -128,6 +186,8 @@
       "images": [
         "/images/koty/mruczus1.jpg"
       ],
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=mruczus-8",
+      "wirtualniOpiekunowie": [],
       "historia": "Mruczuś to aktywny kociak pełen energii. Szuka domu z innym kotem do zabawy."
     },
     {
@@ -144,6 +204,8 @@
       "images": [
         "/images/koty/dzafar1.jpg"
       ],
+      "apiImage": "https://cataas.com/cat?width=900&height=900&random=dzafar-9",
+      "wirtualniOpiekunowie": ["Agnieszka T.", "Rodzina Kowalskich"],
       "historia": "Dżafar to dostojny senior szukający spokojnego domu. Ma swój charakter, ale potrafi być czuły."
     }
   ]

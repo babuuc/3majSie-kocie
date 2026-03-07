@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useState } from 'react';
 import kotyData from '../data/koty.json';
+
+const MIN_GALLERY_IMAGES = 3;
 
 export default function Adoptuj() {
   const { id } = useParams();
@@ -8,6 +10,46 @@ export default function Adoptuj() {
   const [showZasadyModal, setShowZasadyModal] = useState(false);
   
   const kot = kotyData.koty.find(k => k.id === parseInt(id));
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    setCurrentImageIndex(0);
+  }, [id]);
+
+  const galleryImages = kot
+    ? (() => {
+        const localImages = (kot.images || []).map((image, index) => ({
+          src: image,
+          fallback: `https://cataas.com/cat?width=900&height=900&random=${encodeURIComponent(`${kot.id}-fallback-${index + 1}`)}`,
+        }));
+
+        const apiImages = Array.from({ length: Math.max(MIN_GALLERY_IMAGES - localImages.length, 0) }, (_, index) => ({
+          src: `https://cataas.com/cat?width=900&height=900&random=${encodeURIComponent(`${kot.id}-api-${index + 1}`)}`,
+          fallback: kot.apiImage || null,
+        }));
+
+        const images = [...localImages, ...apiImages];
+
+        if (images.length === 0 && kot.apiImage) {
+          return Array.from({ length: MIN_GALLERY_IMAGES }, (_, index) => ({
+            src: `https://cataas.com/cat?width=900&height=900&random=${encodeURIComponent(`${kot.id}-api-only-${index + 1}`)}`,
+            fallback: kot.apiImage,
+          }));
+        }
+
+        return images;
+      })()
+    : [];
+
+  const handleImageError = (event, fallbackImage) => {
+    if (fallbackImage && event.currentTarget.getAttribute('src') !== fallbackImage) {
+      event.currentTarget.src = fallbackImage;
+      return;
+    }
+
+    event.currentTarget.style.display = 'none';
+    event.currentTarget.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-400 text-6xl">🐱</div>';
+  };
 
   if (!kot) {
     return (
@@ -27,15 +69,13 @@ export default function Adoptuj() {
         {/* Galeria zdjęć */}
         <div>
           <div className="bg-gray-200 rounded-2xl overflow-hidden aspect-square mb-4">
-            {kot.images && kot.images.length > 0 ? (
+            {galleryImages.length > 0 ? (
               <img
-                src={kot.images[currentImageIndex]}
+                src={galleryImages[currentImageIndex]?.src || galleryImages[currentImageIndex]?.fallback}
                 alt={`${kot.name} - zdjęcie ${currentImageIndex + 1}`}
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-400 text-6xl">🐱</div>';
-                }}
+                loading="lazy"
+                onError={(event) => handleImageError(event, galleryImages[currentImageIndex]?.fallback)}
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center text-gray-400 text-6xl">
@@ -44,24 +84,22 @@ export default function Adoptuj() {
             )}
           </div>
           {/* Miniaturki */}
-          {kot.images && kot.images.length > 1 && (
+          {galleryImages.length > 1 && (
             <div className="flex gap-2 flex-wrap">
-              {kot.images.map((image, index) => (
+              {galleryImages.map((image, index) => (
                 <button
-                  key={index}
+                  key={`${kot.id}-${index}`}
                   onClick={() => setCurrentImageIndex(index)}
                   className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
                     currentImageIndex === index ? 'border-blue-600 scale-105' : 'border-gray-300'
                   }`}
                 >
                   <img
-                    src={image}
+                    src={image.src || image.fallback}
                     alt={`Miniaturka ${index + 1}`}
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-400 text-sm">🐱</div>';
-                    }}
+                    loading="lazy"
+                    onError={(event) => handleImageError(event, image.fallback)}
                   />
                 </button>
               ))}

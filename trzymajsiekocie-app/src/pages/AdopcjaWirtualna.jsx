@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import kotyData from '../data/koty.json';
 
 export default function AdopcjaWirtualna() {
@@ -11,15 +11,11 @@ export default function AdopcjaWirtualna() {
     signature: ''
   });
 
-  const categories = [
-    { id: 'wszystkie', name: 'Wszystkie', color: '#FF6B6B' },
-    { id: 'dwupaki', name: 'Dwupaki', color: '#4ECDC4' },
-    { id: 'emeryci', name: 'Emeryci', color: '#FFE66D' },
-    { id: 'jedynacy', name: 'Jedynacy', color: '#A8E6CF' },
-    { id: 'kociaki', name: 'Kociaki', color: '#FF8B94' },
-    { id: 'pingwinki', name: 'Pingwinki', color: '#C7CEEA' },
-    { id: 'starszaki', name: 'Starszaki', color: '#FFDAC1' },
-  ];
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, []);
+
+  const categories = kotyData.categories;
 
   // Funkcja do wyświetlania nazwy tagu
   const getTagLabel = (tag) => {
@@ -55,6 +51,27 @@ export default function AdopcjaWirtualna() {
     alert(`Dziękujemy za zainteresowanie adopcją wirtualną kotka ${selectedCat?.name}!`);
     setShowFormModal(false);
     setFormData({ email: '', message: '', signature: '' });
+  };
+
+  const getLocalCatImage = (cat) => cat.images?.[0] || null;
+
+  const getPrimaryCatImage = (cat) => cat.apiImage || getLocalCatImage(cat);
+
+  const handleImageError = (event, backgroundColor = '#e0e0e0') => {
+    event.currentTarget.style.display = 'none';
+    event.currentTarget.parentElement.style.backgroundColor = backgroundColor;
+    event.currentTarget.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white text-4xl font-bold">🐱</div>';
+  };
+
+  const handleCatImageError = (event, cat, backgroundColor = '#e0e0e0') => {
+    const fallbackImage = getLocalCatImage(cat);
+
+    if (fallbackImage && event.currentTarget.getAttribute('src') !== fallbackImage) {
+      event.currentTarget.src = fallbackImage;
+      return;
+    }
+
+    handleImageError(event, backgroundColor);
   };
 
   return (
@@ -192,18 +209,13 @@ export default function AdopcjaWirtualna() {
                   backgroundColor: categories.find(c => c.id === cat.category)?.color || '#e0e0e0'
                 }}
               >
-                {cat.images && cat.images.length > 0 ? (
+                {getPrimaryCatImage(cat) ? (
                   <img
-                    src={cat.images[0]}
+                    src={getPrimaryCatImage(cat)}
                     alt={cat.name}
-                    clas
-                  onClick={(e) => handleOpenForm(cat, e)}
-                  className="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
-                
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white text-4xl font-bold">🐱</div>';
-                    }}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    onError={(event) => handleCatImageError(event, cat, categories.find(c => c.id === cat.category)?.color || '#e0e0e0')}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold">
@@ -217,6 +229,18 @@ export default function AdopcjaWirtualna() {
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{cat.name}</h3>
                 <p className="text-sm text-gray-600 mb-1">{cat.age}</p>
                 <p className="text-sm text-gray-500 capitalize">{categories.find(c => c.id === cat.category)?.name}</p>
+                <div className="mt-4 rounded-xl bg-purple-50 p-4">
+                  <p className="text-sm font-semibold text-gray-800 mb-2">Wirtualni opiekunowie</p>
+                  {cat.wirtualniOpiekunowie && cat.wirtualniOpiekunowie.length > 0 ? (
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      {cat.wirtualniOpiekunowie.map((person) => (
+                        <li key={person}>• {person}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-gray-600">Ten kot czeka na pierwszego opiekuna wirtualnego.</p>
+                  )}
+                </div>
                 <button 
                   onClick={(e) => handleOpenForm(cat, e)}
                   className="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"

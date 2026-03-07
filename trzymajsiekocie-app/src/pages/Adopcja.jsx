@@ -1,9 +1,15 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Adopcja.css';
 import kotyData from '../data/koty.json';
 
 export default function Adopcja() {
   const allCats = kotyData.koty;
+  const categories = kotyData.categories;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, []);
   
   // Funkcja do obliczania liczby kotów w kategorii
   const getCategoryCount = (categoryId) => {
@@ -18,15 +24,25 @@ export default function Adopcja() {
     return 'KOTÓW';
   };
 
-  const categories = [
-    { id: 'wszystkie', name: 'Wszystkie', color: '#FF6B6B' },
-    { id: 'dwupaki', name: 'Dwupaki', color: '#4ECDC4' },
-    { id: 'emeryci', name: 'Emeryci', color: '#FFE66D' },
-    { id: 'jedynacy', name: 'Jedynacy', color: '#A8E6CF' },
-    { id: 'kociaki', name: 'Kociaki', color: '#FF8B94' },
-    { id: 'pingwinki', name: 'Pingwinki', color: '#C7CEEA' },
-    { id: 'starszaki', name: 'Starszaki', color: '#FFDAC1' },
-  ].map(cat => ({
+  const getCategoryPreviewImage = (categoryId) => {
+    const category = categories.find((item) => item.id === categoryId);
+    const localPreview = categoryId === 'wszystkie'
+      ? allCats.find((cat) => cat.images?.length > 0)?.images?.[0]
+      : allCats.find((cat) => cat.category === categoryId && cat.images?.length > 0)?.images?.[0];
+
+    return {
+      primary: category?.apiImage || localPreview || null,
+      fallback: localPreview || null,
+    };
+  };
+
+  const handleImageError = (event, backgroundColor) => {
+    event.currentTarget.style.display = 'none';
+    event.currentTarget.parentElement.style.backgroundColor = backgroundColor;
+    event.currentTarget.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white text-6xl">🐱</div>';
+  };
+
+  const categoriesWithCounts = categories.map(cat => ({
     ...cat,
     count: getCategoryCount(cat.id),
     label: getCatLabel(getCategoryCount(cat.id))
@@ -93,7 +109,11 @@ export default function Adopcja() {
       <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16">
         {/* Grid kategorii */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-          {categories.map((category) => (
+          {categoriesWithCounts.map((category) => (
+            (() => {
+              const previewImage = getCategoryPreviewImage(category.id);
+
+              return (
             <Link
               key={category.id}
               to={`/galeria-kotow?kategoria=${category.id}`}
@@ -104,6 +124,22 @@ export default function Adopcja() {
                 className="aspect-square overflow-hidden"
                 style={{ backgroundColor: category.color }}
               >
+                {previewImage.primary ? (
+                  <img
+                    src={previewImage.primary}
+                    alt={`Kot w kategorii ${category.name}`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    onError={(event) => {
+                      if (previewImage.fallback && event.currentTarget.getAttribute('src') !== previewImage.fallback) {
+                        event.currentTarget.src = previewImage.fallback;
+                        return;
+                      }
+
+                      handleImageError(event, category.color);
+                    }}
+                  />
+                ) : null}
               </div>
               
               {/* Nazwa i liczba */}
@@ -116,6 +152,8 @@ export default function Adopcja() {
                 </p>
               </div>
             </Link>
+              );
+            })()
           ))}
         </div>
       </div>

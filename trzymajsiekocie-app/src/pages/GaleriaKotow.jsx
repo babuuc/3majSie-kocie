@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import './GaleriaKotow.css';
 import kotyData from '../data/koty.json';
@@ -14,17 +14,29 @@ export default function GaleriaKotow() {
     return [];
   });
 
-  const categories = [
-    { id: 'wszystkie', name: 'Wszystkie', color: '#FF6B6B' },
-    { id: 'dwupaki', name: 'Dwupaki', color: '#4ECDC4' },
-    { id: 'emeryci', name: 'Emeryci', color: '#FFE66D' },
-    { id: 'jedynacy', name: 'Jedynacy', color: '#A8E6CF' },
-    { id: 'kociaki', name: 'Kociaki', color: '#FF8B94' },
-    { id: 'pingwinki', name: 'Pingwinki', color: '#C7CEEA' },
-    { id: 'starszaki', name: 'Starszaki', color: '#FFDAC1' },
-  ];
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, []);
 
+  const categories = kotyData.categories;
   const allCats = kotyData.koty;
+
+  const getLocalCatImage = (cat) => cat.images?.[0] || null;
+
+  const getPrimaryCatImage = (cat) => cat.apiImage || getLocalCatImage(cat);
+
+  const handleCatImageError = (event, cat, backgroundColor = '#e0e0e0') => {
+    const fallbackImage = getLocalCatImage(cat);
+
+    if (fallbackImage && event.currentTarget.getAttribute('src') !== fallbackImage) {
+      event.currentTarget.src = fallbackImage;
+      return;
+    }
+
+    event.currentTarget.style.display = 'none';
+    event.currentTarget.parentElement.style.backgroundColor = backgroundColor;
+    event.currentTarget.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white text-4xl font-bold">🐱</div>';
+  };
 
   const handleCategoryToggle = (categoryId) => {
     if (categoryId === 'wszystkie') {
@@ -89,15 +101,13 @@ export default function GaleriaKotow() {
                 backgroundColor: categories.find(c => c.id === cat.category)?.color || '#e0e0e0'
               }}
             >
-              {cat.images && cat.images.length > 0 ? (
+              {getPrimaryCatImage(cat) ? (
                 <img
-                  src={cat.images[0]}
+                  src={getPrimaryCatImage(cat)}
                   alt={cat.name}
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white text-4xl font-bold">🐱</div>';
-                  }}
+                  loading="lazy"
+                  onError={(event) => handleCatImageError(event, cat, categories.find(c => c.id === cat.category)?.color || '#e0e0e0')}
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold">
