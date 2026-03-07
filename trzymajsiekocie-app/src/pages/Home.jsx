@@ -138,33 +138,67 @@ export default function Home() {
       {/* Sekcja – jak pomóc */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 xl:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6">
             Jak możesz pomóc?
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-orange-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+          <p className="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-14">
+            Pod opieką mamy aktualnie <span className="font-bold text-orange-500">ponad 100 kotów</span>.
+          </p>
+
+          {/* Karmy / sklep */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {/* Ocalone Łapki */}
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow border border-orange-100">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-5 text-3xl">
-                🏠
+                🛒
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Adoptuj</h3>
-              <p className="text-gray-600">Daj kotowi stały, kochający dom. Adopcja to najpiękniejszy gest.</p>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Napełnij miseczki</h3>
+              <p className="text-gray-600 mb-5">
+                Napełnij miseczki naszych podopiecznych dokonując zakupu poprzez nasz sklep na stronie
+                Stowarzyszenia Ocalone Łapki. Dzięki Tobie karma, żwirek i podkłady trafią prosto do naszych kociaków!
+              </p>
+              <a
+                href="https://ocalonelapki.pl/organizacja/331/trzymaj-sie-kocie"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-colors shadow-md hover:shadow-lg"
+              >
+                Sprezentuj naszym kotom karmę 🧡
+              </a>
             </div>
 
-            <div className="bg-amber-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-5 text-3xl">
-                🐱
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Dom tymczasowy</h3>
-              <p className="text-gray-600">Zapewnij tymczasowe schronienie kotom czekającym na adopcję.</p>
-            </div>
-
-            <div className="bg-rose-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+            {/* Suppi */}
+            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow border border-rose-100">
               <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-5 text-3xl">
-                💛
+                😻
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Wesprzyj</h3>
-              <p className="text-gray-600">Każda złotówka pomaga w leczeniu, karmieniu i opiece nad kotami.</p>
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Postaw saszetkę na Suppi!</h3>
+              <p className="text-gray-600 mb-5">
+                Postaw naszym kotom saszetkę — każda porcja to pełny brzuszek dla jednego z naszych podopiecznych!
+              </p>
+              <a
+                href="https://suppi.pl/trzymajsiekocie"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-rose-500 hover:bg-rose-600 text-white font-semibold px-6 py-3 rounded-full transition-colors shadow-md hover:shadow-lg"
+              >
+                Postaw saszetkę na Suppi 🐾
+              </a>
+            </div>
+          </div>
+
+          {/* Zrzutka widget */}
+          <div className="max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-800 text-center mb-6">Wesprzyj nas na Zrzutka.pl</h3>
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ paddingBottom: '450px' }}>
+              <iframe
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                src="https://zrzutka.pl/kwn3z8/widget/13"
+                frameBorder="0"
+                scrolling="no"
+                title="Zrzutka - Trzymaj się kocie"
+              ></iframe>
             </div>
           </div>
         </div>
