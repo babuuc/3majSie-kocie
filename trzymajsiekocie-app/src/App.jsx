@@ -12,6 +12,11 @@ import Kontakt from './pages/Kontakt';
 import SzczesliweHistorie from './pages/SzczesliweHistorie';
 import FAQ from './pages/FAQ';
 import Wsparcie from './pages/Wsparcie';
+import Aktualnosci from './pages/Aktualnosci';
+import Kadra from './pages/Kadra';
+import Kalendarz from './pages/Kalendarz';
+import Dokumenty from './pages/Dokumenty';
+import Wolontariat from './pages/Wolontariat';
 
 export default function App() {
   return (
@@ -31,6 +36,11 @@ export default function App() {
           <Route path="/szczesliwe-historie" element={<SzczesliweHistorie />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/wsparcie" element={<Wsparcie />} />
+          <Route path="/aktualnosci" element={<Aktualnosci />} />
+          <Route path="/kadra" element={<Kadra />} />
+          <Route path="/kalendarz" element={<Kalendarz />} />
+          <Route path="/dokumenty" element={<Dokumenty />} />
+          <Route path="/wolontariat" element={<Wolontariat />} />
         </Routes>
       </main>
 
