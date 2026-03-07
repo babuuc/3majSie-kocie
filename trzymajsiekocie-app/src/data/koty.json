@@ -1,0 +1,150 @@
+{
+  "koty": [
+    {
+      "id": 1,
+      "name": "Białek",
+      "category": "jedynacy",
+      "age": "2 lata",
+      "szczepienie": "tak",
+      "odrobaczenie": "tak",
+      "kastracja": "tak",
+      "stosunekDoKotow": "bardzo pozytywny",
+      "stosunekDoPsow": "nieznany",
+      "adopcjaWirtualna": "czeka-na-dom",
+      "images": [
+        "/images/koty/bialek1.jpg",
+        "/images/koty/bialek2.jpg",
+        "/images/koty/bialek3.jpg"
+      ],
+      "historia": "Białek to idealny towarzysz dla spokojnych dorosłych kotów. Jest delikatny, nienachalny, ale z radością nawiązuje kocie przyjaźnie. Ma w sobie coś wyjątkowego – lubią go nawet te najbardziej nieśmiałe futrzaki. Z tego powodu nowy dom Białka musi mieć innego kota – koci kompan to dla niego absolutna konieczność!\n\nW relacjach z ludźmi jest na początku nieco ostrożny i potrzebuje czasu, by zaufać, ale gdy to nastąpi, odkryjesz w nim wiernego, kochającego przyjaciela.\n\nBiałek jest w pełni zdrowy i gotowy, by zamieszkać w nowym, troskliwym domu.\n\nBiałek szuka kochającego domu niewychodzącego z odpowiednimi zabezpieczeniami."
+    },
+    {
+      "id": 2,
+      "name": "Mruczek",
+      "category": "kociaki",
+      "age": "3 miesiące",
+      "szczepienie": "tak",
+      "odrobaczenie": "tak",
+      "kastracja": "nie - za młody",
+      "stosunekDoKotow": "pozytywny",
+      "stosunekDoPsow": "pozytywny",
+      "adopcjaWirtualna": null,
+      "images": [
+        "/images/koty/mruczek1.jpg"
+      ],
+      "historia": "Mruczek to mały energiczny kociak pełen życia. Uwielbia zabawę i jest bardzo towarzyski. Idealny dla rodziny z dziećmi."
+    },
+    {
+      "id": 3,
+      "name": "Puszek",
+      "category": "emeryci",
+      "age": "12 lat",
+      "szczepienie": "tak",
+      "odrobaczenie": "tak",
+      "kastracja": "tak",
+      "stosunekDoKotow": "neutralny",
+      "stosunekDoPsow": "negatywny",
+      "adopcjaWirtualna": "rezydent",
+      "images": [
+        "/images/koty/puszek1.jpg"
+      ],
+      "historia": "Puszek to spokojny senior, który szuka ciepłego domu na jesień życia. Kocha drzapki i długie drzemki w słońcu."
+    },
+    {
+      "id": 4,
+      "name": "Filemon",
+      "category": "dwupaki",
+      "age": "2 lata",
+      "szczepienie": "tak",
+      "odrobaczenie": "tak",
+      "kastracja": "tak",
+      "stosunekDoKotow": "pozytywny",
+      "stosunekDoPsow": "pozytywny",
+      "adopcjaWirtualna": "czeka-na-dom",
+      "images": [
+        "/images/koty/filemon1.jpg"
+      ],
+      "historia": "Filemon to piękny dwukolorowy kot o łagodnym usposobieniu. Lubi towarzystwo zarówno ludzi, jak i innych zwierząt."
+    },
+    {
+      "id": 5,
+      "name": "Luna",
+      "category": "jedynacy",
+      "age": "5 lat",
+      "szczepienie": "tak",
+      "odrobaczenie": "tak",
+      "kastracja": "tak",
+      "stosunekDoKotow": "negatywny",
+      "stosunekDoPsow": "negatywny",
+      "adopcjaWirtualna": null,
+      "images": [
+        "/images/koty/luna1.jpg"
+      ],
+      "historia": "Luna to niezależna kotka, która preferuje być jedynym pupilem w domu. Dla odpowiedniej osoby będzie wiernym kompanem."
+    },
+    {
+      "id": 6,
+      "name": "Bella",
+      "category": "starszaki",
+      "age": "8 lat",
+      "szczepienie": "tak",
+      "odrobaczenie": "tak",
+      "kastracja": "tak",
+      "stosunekDoKotow": "pozytywny",
+      "stosunekDoPsow": "neutralny",
+      "adopcjaWirtualna": "rezydent",
+      "images": [
+        "/images/koty/bella1.jpg"
+      ],
+      "historia": "Bella to delikatna kotka w średnim wieku, która uwielbia przytulanie się i głaskanie."
+    },
+    {
+      "id": 7,
+      "name": "Simba",
+      "category": "pingwinki",
+      "age": "4 lata",
+      "szczepienie": "tak",
+      "odrobaczenie": "tak",
+      "kastracja": "tak",
+      "stosunekDoKotow": "pozytywny",
+      "stosunekDoPsow": "pozytywny",
+      "adopcjaWirtualna": "czeka-na-dom",
+      "images": [
+        "/images/koty/simba1.jpg"
+      ],
+      "historia": "Simba to biało-czarny kot przypominający pingwinka. Jest towarzyski i przyjazny wobec wszystkich."
+    },
+    {
+      "id": 8,
+      "name": "Mruczuś",
+      "category": "kociaki",
+      "age": "4 miesiące",
+      "szczepienie": "tak",
+      "odrobaczenie": "tak",
+      "kastracja": "nie - za młody",
+      "stosunekDoKotow": "bardzo pozytywny",
+      "stosunekDoPsow": "nieznany",
+      "adopcjaWirtualna": null,
+      "images": [
+        "/images/koty/mruczus1.jpg"
+      ],
+      "historia": "Mruczuś to aktywny kociak pełen energii. Szuka domu z innym kotem do zabawy."
+    },
+    {
+      "id": 9,
+      "name": "Dżafar",
+      "category": "emeryci",
+      "age": "14 lat",
+      "szczepienie": "tak",
+      "odrobaczenie": "tak",
+      "kastracja": "tak",
+      "stosunekDoKotow": "neutralny",
+      "stosunekDoPsow": "neutralny",
+      "adopcjaWirtualna": "rezydent",
+      "images": [
+        "/images/koty/dzafar1.jpg"
+      ],
+      "historia": "Dżafar to dostojny senior szukający spokojnego domu. Ma swój charakter, ale potrafi być czuły."
+    }
+  ]
+}
