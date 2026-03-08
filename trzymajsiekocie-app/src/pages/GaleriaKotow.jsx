@@ -2,6 +2,43 @@ import { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import './GaleriaKotow.css';
 import kotyData from '../data/koty.json';
+import useCatImages from '../hooks/useCatImages';
+
+function CatImage({ apiImage, localImage, color, altText }) {
+  const [src, setSrc] = useState(apiImage || localImage);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    if (apiImage) {
+      setSrc(apiImage);
+      setFailed(false);
+    }
+  }, [apiImage]);
+
+  if (failed || !src) {
+    return (
+      <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold" style={{ backgroundColor: color }}>
+        🐱
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={altText}
+      className="w-full h-full object-cover"
+      loading="lazy"
+      onError={() => {
+        if (localImage && src !== localImage) {
+          setSrc(localImage);
+        } else {
+          setFailed(true);
+        }
+      }}
+    />
+  );
+}
 
 export default function GaleriaKotow() {
   const [searchParams] = useSearchParams();
@@ -20,23 +57,9 @@ export default function GaleriaKotow() {
 
   const categories = kotyData.categories;
   const allCats = kotyData.koty;
+  const { images: apiImages } = useCatImages(allCats.length);
 
   const getLocalCatImage = (cat) => cat.images?.[0] || null;
-
-  const getPrimaryCatImage = (cat) => cat.apiImage || getLocalCatImage(cat);
-
-  const handleCatImageError = (event, cat, backgroundColor = '#e0e0e0') => {
-    const fallbackImage = getLocalCatImage(cat);
-
-    if (fallbackImage && event.currentTarget.getAttribute('src') !== fallbackImage) {
-      event.currentTarget.src = fallbackImage;
-      return;
-    }
-
-    event.currentTarget.style.display = 'none';
-    event.currentTarget.parentElement.style.backgroundColor = backgroundColor;
-    event.currentTarget.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white text-4xl font-bold">🐱</div>';
-  };
 
   const handleCategoryToggle = (categoryId) => {
     if (categoryId === 'wszystkie') {
@@ -88,7 +111,9 @@ export default function GaleriaKotow() {
 
       {/* Galeria kotów */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {filteredCats.map((cat) => (
+        {filteredCats.map((cat) => {
+          const originalIndex = allCats.findIndex(c => c.id === cat.id);
+          return (
           <Link
             key={cat.id}
             to={`/adoptuj/${cat.id}`}
@@ -101,19 +126,12 @@ export default function GaleriaKotow() {
                 backgroundColor: categories.find(c => c.id === cat.category)?.color || '#e0e0e0'
               }}
             >
-              {getPrimaryCatImage(cat) ? (
-                <img
-                  src={getPrimaryCatImage(cat)}
-                  alt={cat.name}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  onError={(event) => handleCatImageError(event, cat, categories.find(c => c.id === cat.category)?.color || '#e0e0e0')}
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold">
-                  🐱
-                </div>
-              )}
+              <CatImage
+                apiImage={apiImages[originalIndex]}
+                localImage={getLocalCatImage(cat)}
+                color={categories.find(c => c.id === cat.category)?.color || '#e0e0e0'}
+                altText={cat.name}
+              />
             </div>
             
             {/* Informacje o kocie */}
@@ -126,7 +144,8 @@ export default function GaleriaKotow() {
               </button>
             </div>
           </Link>
-        ))}
+          );
+        })}
       </div>
 
       {filteredCats.length === 0 && (

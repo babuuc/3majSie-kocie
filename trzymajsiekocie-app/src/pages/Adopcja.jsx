@@ -1,11 +1,49 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Adopcja.css';
 import kotyData from '../data/koty.json';
+import useCatImages from '../hooks/useCatImages';
+
+function CategoryImage({ apiImage, localPreview, color, altText }) {
+  const [src, setSrc] = useState(apiImage || localPreview);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    if (apiImage) {
+      setSrc(apiImage);
+      setFailed(false);
+    }
+  }, [apiImage]);
+
+  if (failed || !src) {
+    return (
+      <div className="w-full h-full flex items-center justify-center text-white text-6xl" style={{ backgroundColor: color }}>
+        🐱
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={altText}
+      className="w-full h-full object-cover"
+      loading="lazy"
+      onError={() => {
+        if (localPreview && src !== localPreview) {
+          setSrc(localPreview);
+        } else {
+          setFailed(true);
+        }
+      }}
+    />
+  );
+}
 
 export default function Adopcja() {
   const allCats = kotyData.koty;
   const categories = kotyData.categories;
+  const { images: apiImages, loading: imagesLoading } = useCatImages(categories.length);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
@@ -24,22 +62,13 @@ export default function Adopcja() {
     return 'KOTÓW';
   };
 
-  const getCategoryPreviewImage = (categoryId) => {
-    const category = categories.find((item) => item.id === categoryId);
+  const getCategoryPreviewImage = (categoryId, index) => {
+    const apiImage = apiImages[index] || null;
     const localPreview = categoryId === 'wszystkie'
       ? allCats.find((cat) => cat.images?.length > 0)?.images?.[0]
       : allCats.find((cat) => cat.category === categoryId && cat.images?.length > 0)?.images?.[0];
 
-    return {
-      primary: category?.apiImage || localPreview || null,
-      fallback: localPreview || null,
-    };
-  };
-
-  const handleImageError = (event, backgroundColor) => {
-    event.currentTarget.style.display = 'none';
-    event.currentTarget.parentElement.style.backgroundColor = backgroundColor;
-    event.currentTarget.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white text-6xl">🐱</div>';
+    return { apiImage, localPreview };
   };
 
   const categoriesWithCounts = categories.map(cat => ({
@@ -109,9 +138,9 @@ export default function Adopcja() {
       <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16">
         {/* Grid kategorii */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-          {categoriesWithCounts.map((category) => (
+          {categoriesWithCounts.map((category, index) => (
             (() => {
-              const previewImage = getCategoryPreviewImage(category.id);
+              const previewImage = getCategoryPreviewImage(category.id, index);
 
               return (
             <Link
@@ -124,22 +153,12 @@ export default function Adopcja() {
                 className="aspect-square overflow-hidden"
                 style={{ backgroundColor: category.color }}
               >
-                {previewImage.primary ? (
-                  <img
-                    src={previewImage.primary}
-                    alt={`Kot w kategorii ${category.name}`}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    onError={(event) => {
-                      if (previewImage.fallback && event.currentTarget.getAttribute('src') !== previewImage.fallback) {
-                        event.currentTarget.src = previewImage.fallback;
-                        return;
-                      }
-
-                      handleImageError(event, category.color);
-                    }}
-                  />
-                ) : null}
+                <CategoryImage
+                  apiImage={previewImage.apiImage}
+                  localPreview={previewImage.localPreview}
+                  color={category.color}
+                  altText={`Kot w kategorii ${category.name}`}
+                />
               </div>
               
               {/* Nazwa i liczba */}
