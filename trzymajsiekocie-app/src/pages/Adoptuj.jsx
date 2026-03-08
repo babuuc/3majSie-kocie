@@ -63,11 +63,9 @@ export default function Adoptuj() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16">
-      {/* Nagłówek z imieniem kota */}
       <h1 className="text-5xl font-bold text-gray-800 mb-8 text-center">{kot.name}</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-        {/* Galeria zdjęć */}
         <div>
           <div className="bg-gray-200 rounded-2xl overflow-hidden aspect-square mb-4">
             {galleryImages.length > 0 ? (
@@ -84,7 +82,6 @@ export default function Adoptuj() {
               </div>
             )}
           </div>
-          {/* Miniaturki */}
           {galleryImages.length > 1 && (
             <div className="flex gap-2 flex-wrap">
               {galleryImages.map((image, index) => (
@@ -92,7 +89,7 @@ export default function Adoptuj() {
                   key={`${kot.id}-${index}`}
                   onClick={() => setCurrentImageIndex(index)}
                   className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
-                    currentImageIndex === index ? 'border-blue-600 scale-105' : 'border-gray-300'
+                    currentImageIndex === index ? 'border-orange-500 scale-105' : 'border-gray-300'
                   }`}
                 >
                   <img
@@ -108,7 +105,6 @@ export default function Adoptuj() {
           )}
         </div>
 
-        {/* Metryczka */}
         <div className="bg-white rounded-2xl shadow-lg p-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Metryczka</h2>
           <div className="space-y-4">
@@ -140,19 +136,17 @@ export default function Adoptuj() {
         </div>
       </div>
 
-      {/* Historia kota */}
-      <div className="bg-blue-50 rounded-2xl p-8 mb-8">
+      <div className="bg-orange-50 rounded-2xl p-8 mb-8">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">Historia</h2>
         <div className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
           {kot.historia}
         </div>
       </div>
 
-      {/* Przyciski akcji */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <Link
           to={`/adopcja-ankieta/${kot.id}`}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors shadow-lg flex items-center justify-center text-center"
+          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors shadow-lg flex items-center justify-center text-center"
         >
           Wypełnij ankietę adopcyjną
         </Link>
@@ -164,8 +158,7 @@ export default function Adoptuj() {
         </button>
       </div>
 
-      {/* Adopcja wirtualna */}
-      <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-8">
+      <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Adopcja wirtualna</h2>
         <p className="text-gray-700 text-lg leading-relaxed mb-6">
           Nie masz możliwości przyjęcia kotka pod swój dach? Istnieje opcja adopcji wirtualnej. 
@@ -175,13 +168,12 @@ export default function Adoptuj() {
         </p>
         <Link 
           to="/adopcja-wirtualna"
-          className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+          className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
         >
           Dowiedz się więcej
         </Link>
       </div>
 
-      {/* Modal z zasadami adopcji */}
       {showZasadyModal && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
@@ -202,7 +194,6 @@ export default function Adoptuj() {
             </div>
 
             <div className="p-8">
-              {/* Krok 2 - Wypełnij ankietę adopcyjną */}
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Wypełnij ankietę adopcyjną</h3>
                 <p className="text-gray-700 text-lg leading-relaxed">
@@ -216,7 +207,7 @@ export default function Adoptuj() {
               <div className="mt-8 flex justify-center">
                 <button 
                   onClick={() => setShowZasadyModal(false)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors"
+                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors"
                 >
                   Zamknij
                 </button>

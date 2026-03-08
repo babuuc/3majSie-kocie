@@ -6,7 +6,6 @@ import catPhoto from '../assets/snusia_koksik.webp';
 export default function Kontakt() {
   return (
     <div>
-      {/* Hero banner */}
       <section className="relative bg-gradient-to-br from-orange-50 via-white to-amber-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -35,16 +34,13 @@ export default function Kontakt() {
         </div>
       </section>
 
-      {/* Content */}
       <section className="max-w-7xl mx-auto px-4 xl:px-8 py-14">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          {/* Left column — info & location (2/5) */}
           <div className="lg:col-span-2 space-y-8">
             <KontaktInfo />
             <KontaktLocation />
           </div>
 
-          {/* Right column — form (3/5) */}
           <div className="lg:col-span-3">
             <KontaktForm />
           </div>

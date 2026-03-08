@@ -38,7 +38,6 @@ function CatCarousel() {
 
   return (
     <div className="relative max-w-3xl mx-auto">
-      {/* Główne zdjęcie */}
       <div className="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3] bg-gray-100">
         <img
           src={cats[current].url}
@@ -46,7 +45,6 @@ function CatCarousel() {
           className="w-full h-full object-cover transition-opacity duration-500"
         />
 
-        {/* Strzałki */}
         <button
           onClick={prev}
           className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-md transition-colors"
@@ -60,13 +58,11 @@ function CatCarousel() {
           <ChevronRight size={22} className="text-gray-700" />
         </button>
 
-        {/* Licznik */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white text-sm px-3 py-1 rounded-full">
           {current + 1} / {cats.length}
         </div>
       </div>
 
-      {/* Miniaturki */}
       <div className="flex justify-center gap-2 mt-4 flex-wrap">
         {cats.map((cat, i) => (
           <button
@@ -87,7 +83,6 @@ function CatCarousel() {
 export default function Home() {
   return (
     <div>
-      {/* Hero – sekcja podatkowa */}
       <section className="bg-gradient-to-br from-orange-500 via-orange-400 to-amber-400 text-white">
         <div className="max-w-7xl mx-auto px-4 xl:px-8 py-20 text-center">
           <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2 mb-8 text-sm font-medium">
@@ -119,7 +114,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sekcja – karuzela kotów */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 xl:px-8">
           <div className="text-center mb-12">
@@ -135,7 +129,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sekcja – jak pomóc */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 xl:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6">
@@ -146,9 +139,7 @@ export default function Home() {
             Pod opieką mamy aktualnie <span className="font-bold text-orange-500">ponad 100 kotów</span>.
           </p>
 
-          {/* Karmy / sklep */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {/* Ocalone Łapki */}
             <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow border border-orange-100">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-5 text-3xl">
                 🛒
@@ -168,7 +159,6 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Suppi */}
             <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow border border-rose-100">
               <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-5 text-3xl">
                 😻
@@ -188,7 +178,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Zrzutka widget */}
           <div className="max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-800 text-center mb-6">Wesprzyj nas na Zrzutka.pl</h3>
             <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ paddingBottom: '450px' }}>
