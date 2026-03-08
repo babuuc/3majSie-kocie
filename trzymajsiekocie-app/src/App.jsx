@@ -19,10 +19,12 @@ import Dokumenty from './pages/Dokumenty';
 import Wolontariat from './pages/Wolontariat';
 import AdopcjaAnkieta from './pages/AdopcjaAnkieta';
 import AIAssistant from './components/AIAssistant';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 font-sans">
+      <ScrollToTop />
       <Header />
       
       <main className="flex-grow">
