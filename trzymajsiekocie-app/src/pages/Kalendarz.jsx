@@ -25,7 +25,7 @@ export default function Kalendarz() {
             { month: 'Marzec', day: '22', title: 'Targi PupiLove', desc: 'Spotkaj nas w Centrum Riviera w Gdyni.', type: 'Wydarzenie' },
             { month: 'Kwiecień', day: '05', title: 'Jarmark Wielkanocny', desc: 'Wielkanocne fanty i kocie gadżety na 100czni w Gdańsku.', type: 'Wydarzenie' },
           ].map((event) => (
-            <div key={event.title} className="card-base card-base-hover p-6 flex gap-5">
+            <div key={event.title} className="card-base card-base-hover p-6 flex items-center gap-5">
               <div className="flex flex-col items-center justify-center shrink-0 w-16 h-16 rounded-2xl bg-orange-50 border border-orange-100">
                 <span className="text-xs font-semibold text-orange-500 uppercase leading-none">{event.month}</span>
                 <span className="text-2xl font-bold text-gray-800 leading-none mt-0.5">{event.day}</span>
@@ -45,8 +45,13 @@ export default function Kalendarz() {
           <p className="text-body max-w-md mx-auto mb-6">
             Śledź nas na Facebooku i Instagramie, żeby nie przegapić żadnego wydarzenia!
           </p>
-          <div className="img-placeholder mx-auto w-full max-w-lg aspect-[16/9]">
-            Placeholder kalendarza<br />1200×675
+          <div className="mx-auto w-full max-w-lg aspect-[16/9] rounded-xl overflow-hidden border border-orange-100 shadow-sm">
+            <iframe
+              src="https://calendar.google.com/calendar/embed?showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&wkst=2&bgcolor=%23ffffff&color=%23F4511E"
+              className="w-full h-full border-0"
+              title="Kalendarz wydarzeń"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
