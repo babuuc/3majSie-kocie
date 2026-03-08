@@ -94,7 +94,7 @@ export default function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="max-w-3xl mx-auto px-4 xl:px-8 pt-4 pb-12 md:pt-5 md:pb-14 lg:pt-6 lg:pb-[4.5rem]">
+    <section className="max-w-3xl mx-auto px-4 xl:px-8 section-content">
       <div className="space-y-3">
         {faqData.map((item, index) => (
           <FAQItem
