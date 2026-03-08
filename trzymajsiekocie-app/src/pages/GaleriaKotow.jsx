@@ -72,10 +72,6 @@ export default function GaleriaKotow() {
                 onChange={() => handleCategoryToggle(category.id)}
                 className="w-5 h-5 rounded accent-orange-500"
               />
-              <span 
-                className="w-4 h-4 rounded-full"
-                style={{ backgroundColor: category.color }}
-              ></span>
               <span className="font-medium text-gray-700">{category.name}</span>
             </label>
           ))}
