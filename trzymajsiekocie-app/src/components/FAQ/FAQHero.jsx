@@ -26,7 +26,7 @@ export default function FAQHero() {
             <img
               src={faqLogo}
               alt="Kotek z pytajnikiem"
-              className="w-44 lg:w-52 opacity-80 drop-shadow-md"
+              className="w-48 lg:w-56 opacity-85 drop-shadow-md"
             />
           </div>
         </div>

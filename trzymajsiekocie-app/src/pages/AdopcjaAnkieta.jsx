@@ -6,8 +6,14 @@ export default function AdopcjaAnkieta() {
   const { id } = useParams();
   const kot = kotyData.koty.find(k => k.id === parseInt(id));
   return (
-    <div className="max-w-3xl mx-auto py-10">
-      <h1 className="text-3xl font-bold text-center mb-8">Ankieta adopcyjna dla kota {kot ? kot.name : ''}</h1>
+    <div>
+      <section className="hero-gradient">
+        <div className="section-container py-10 text-center">
+          <span className="section-label">Adopcja</span>
+          <h1 className="heading-page mb-2">Ankieta adopcyjna</h1>
+          {kot && <p className="text-body text-lg">dla kota <span className="font-semibold text-gray-800">{kot.name}</span></p>}
+        </div>
+      </section>
       <AdoptionForm catName={kot ? kot.name : ''} />
     </div>
   );

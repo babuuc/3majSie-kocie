@@ -26,7 +26,7 @@ export default function HistorieHero() {
             <img
               src={catLoveLogo}
               alt="Kocie serduszka"
-              className="w-48 lg:w-56 opacity-80 drop-shadow-md"
+              className="w-52 lg:w-60 opacity-85 drop-shadow-md"
             />
           </div>
         </div>
