@@ -107,8 +107,10 @@ export default function FAQAccordion() {
         ))}
       </div>
 
-      <div className="mt-12 text-center">
-        <p className="text-muted mb-4">Nie znalazłeś odpowiedzi na swoje pytanie?</p>
+      <div className="mt-14 text-center bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-10 lg:p-12 border border-orange-100">
+        <span className="text-4xl block mb-4">😺</span>
+        <h3 className="text-xl font-bold text-gray-800 mb-2">Nie znalazłeś odpowiedzi?</h3>
+        <p className="text-muted mb-6">Chętnie odpowiemy na każde pytanie.</p>
         <Link
           to="/kontakt"
           className="btn btn-primary btn-rect"

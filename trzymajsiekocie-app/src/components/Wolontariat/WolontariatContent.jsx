@@ -73,7 +73,8 @@ export default function WolontariatContent() {
         </div>
       </div>
 
-      <div className="mt-14 text-center bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8 lg:p-12">
+      <div className="mt-16 text-center bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8 lg:p-14 border border-orange-100">
+        <span className="text-5xl block mb-4">😺</span>
         <h2 className="text-2xl font-bold text-gray-800 mb-3">Dołącz do nas</h2>
         <p className="text-body max-w-md mx-auto mb-6">
           Napisz kilka słów o sobie: ile masz czasu, jak chcesz pomagać

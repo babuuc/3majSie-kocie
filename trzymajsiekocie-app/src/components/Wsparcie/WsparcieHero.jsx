@@ -24,7 +24,7 @@ export default function WsparcieHero() {
             <img
               src={loveLogo}
               alt="Kotek z serduszkami"
-              className="w-52 lg:w-60 opacity-80 drop-shadow-md"
+              className="w-56 lg:w-64 opacity-85 drop-shadow-md"
             />
           </div>
         </div>

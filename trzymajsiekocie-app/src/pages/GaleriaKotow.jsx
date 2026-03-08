@@ -45,11 +45,21 @@ export default function GaleriaKotow() {
     : allCats.filter(cat => selectedCategories.includes(cat.category));
 
   return (
-    <div className="section-container section-hero">
-      <h1 className="heading-page mb-8">Galeria kotów do adopcji</h1>
+    <div>
+      <section className="hero-gradient">
+        <div className="section-container section-hero">
+          <div className="max-w-2xl">
+            <span className="section-label">Galeria</span>
+            <h1 className="heading-page mb-4">Galeria kotów do adopcji</h1>
+            <p className="text-body text-lg">Przeglądaj naszych podopiecznych i znajdź kota dla siebie.</p>
+          </div>
+        </div>
+      </section>
 
-      <div className="mb-12 card-base p-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">Filtruj po kategorii:</h2>
+      <section className="section-container section-content">
+
+      <div className="mb-10 card-base p-6">
+        <h2 className="text-lg font-bold text-gray-800 mb-4">Filtruj po kategorii:</h2>
         <div className="flex flex-wrap gap-4">
           {categories.map((category) => (
             <label
@@ -79,7 +89,7 @@ export default function GaleriaKotow() {
           <Link
             key={cat.id}
             to={`/adoptuj/${cat.id}`}
-            className="cat-card rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="cat-card card-base card-base-hover overflow-hidden"
           >
             <div 
               className="aspect-square overflow-hidden"
@@ -95,11 +105,11 @@ export default function GaleriaKotow() {
               />
             </div>
             
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{cat.name}</h3>
+            <div className="p-5">
+              <h3 className="text-lg font-bold text-gray-800 mb-1">{cat.name}</h3>
               <p className="text-sm text-gray-600 mb-1">{cat.age}</p>
               <p className="text-sm text-muted capitalize">{categories.find(c => c.id === cat.category)?.name}</p>
-              <button className="mt-4 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+              <button className="mt-4 w-full btn btn-primary btn-rect text-sm py-2.5">
                 Zobacz profil
               </button>
             </div>
@@ -109,10 +119,12 @@ export default function GaleriaKotow() {
       </div>
 
       {filteredCats.length === 0 && (
-        <div className="text-center py-12">
+        <div className="text-center py-16">
+          <span className="text-5xl block mb-4">🐱</span>
           <p className="text-muted text-lg">Brak kotów w wybranych kategoriach</p>
         </div>
       )}
+      </section>
     </div>
   );
 }

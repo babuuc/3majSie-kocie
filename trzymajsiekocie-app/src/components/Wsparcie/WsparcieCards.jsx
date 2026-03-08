@@ -116,16 +116,16 @@ const cards = [
 
 function WsparcieCard({ icon: Icon, title, description, link, externalLink }) {
   return (
-    <div className="card-base card-base-hover p-6 flex flex-col">
-      <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center mb-4 shrink-0">
-        <Icon size={20} className="text-orange-500" />
+    <div className="card-base card-base-hover p-7 flex flex-col">
+      <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center mb-5 shrink-0">
+        <Icon size={22} className="text-orange-500" />
       </div>
       <h3 className="text-lg font-bold text-gray-800 mb-2">{title}</h3>
       <p className="text-sm text-muted leading-relaxed flex-grow">{description}</p>
       {link && (
         <Link
           to={link.to}
-          className="inline-flex items-center mt-4 text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
+          className="inline-flex items-center mt-5 text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
         >
           {link.label} →
         </Link>
@@ -135,7 +135,7 @@ function WsparcieCard({ icon: Icon, title, description, link, externalLink }) {
           href={externalLink.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center mt-4 text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
+          className="inline-flex items-center mt-5 text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
         >
           {externalLink.label} →
         </a>
@@ -147,7 +147,8 @@ function WsparcieCard({ icon: Icon, title, description, link, externalLink }) {
 export default function WsparcieCards() {
   return (
     <section className="section-container section-content">
-      <div className="mb-10 text-center">
+      <div className="mb-12 text-center">
+        <span className="section-label">Pomoc</span>
         <h2 className="heading-section mb-3">
           Sposoby na wsparcie
         </h2>

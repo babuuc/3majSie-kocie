@@ -62,10 +62,16 @@ export default function Adoptuj() {
   }
 
   return (
-    <div className="section-container section-hero">
-      <h1 className="heading-page text-5xl mb-8 text-center">{kot.name}</h1>
+    <div>
+      <section className="hero-gradient">
+        <div className="section-container section-hero">
+          <h1 className="heading-page text-center mb-2">{kot.name}</h1>
+          <p className="text-center text-body text-lg">Poznaj tego kota bliżej i rozważ adopcję 🐾</p>
+        </div>
+      </section>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+      <section className="section-container section-content">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
         <div>
           <div className="bg-gray-200 rounded-2xl overflow-hidden aspect-square mb-4">
             {galleryImages.length > 0 ? (
@@ -106,7 +112,10 @@ export default function Adoptuj() {
         </div>
 
         <div className="card-base shadow-lg p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Metryczka</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <span className="w-1.5 h-7 bg-orange-500 rounded-full inline-block"></span>
+            Metryczka
+          </h2>
           <div className="space-y-4">
             <div className="border-b border-gray-200 pb-3">
               <p className="text-sm text-muted mb-1">Wiek:</p>
@@ -136,8 +145,11 @@ export default function Adoptuj() {
         </div>
       </div>
 
-      <div className="bg-orange-50 rounded-2xl p-8 mb-8">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Historia</h2>
+      <div className="bg-orange-50 rounded-2xl p-8 lg:p-10 mb-8">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <span className="w-1.5 h-7 bg-orange-500 rounded-full inline-block"></span>
+          Historia
+        </h2>
         <div className="text-body text-lg leading-relaxed whitespace-pre-line">
           {kot.historia}
         </div>
@@ -146,19 +158,19 @@ export default function Adoptuj() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <Link
           to={`/adopcja-ankieta/${kot.id}`}
-          className="btn btn-primary btn-rect btn-lg w-full"
+          className="btn btn-primary btn-rect btn-lg w-full text-center"
         >
           Wypełnij ankietę adopcyjną
         </Link>
         <button 
           onClick={() => setShowZasadyModal(true)}
-          className="btn btn-secondary btn-lg w-full"
+          className="btn btn-secondary btn-lg w-full text-center"
         >
           Zasady adopcji
         </button>
       </div>
 
-      <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8">
+      <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8 lg:p-10 border border-orange-100">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Adopcja wirtualna</h2>
         <p className="text-body text-lg leading-relaxed mb-6">
           Nie masz możliwości przyjęcia kotka pod swój dach? Istnieje opcja adopcji wirtualnej. 
@@ -216,6 +228,7 @@ export default function Adoptuj() {
           </div>
         </div>
       )}
+      </section>
     </div>
   );
 }

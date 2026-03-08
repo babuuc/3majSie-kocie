@@ -7,13 +7,13 @@ const socialLinkClass = 'w-10 h-10 bg-zinc-800 rounded-full flex items-center ju
 export default function Footer() {
   return (
     <footer className="bg-zinc-900 text-gray-300 pt-16 pb-8 border-t border-zinc-800">
-      <div className="max-w-7xl mx-auto px-4 xl:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 xl:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
         <div className="space-y-4">
-          <div className="flex items-center gap-3 mb-6">
-            <img src="/src/assets/logo_footer.png" alt="Trzymaj Się, Kocie!" className="h-32 w-auto" />
+          <div className="flex items-center gap-3 mb-4">
+            <img src="/src/assets/logo_footer.png" alt="Trzymaj Się, Kocie!" className="h-24 w-auto" />
           </div>
           <p className="text-sm text-gray-400 leading-relaxed">
-            Nasze działania mają na celu ograniczenie kociej bezdomności.
+            Nasze działania mają na celu ograniczenie kociej bezdomności. Pomagamy kotom z Trójmiasta i okolic.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function Footer() {
 
         <div>
           <h3 className="text-white font-semibold text-lg mb-6">Obserwuj nas</h3>
-          <div className="flex items-center flex-wrap gap-4">
+          <div className="flex items-center flex-wrap gap-3">
             <a href="/" className={socialLinkClass}><Instagram size={18} /></a>
             <a href="/" className={socialLinkClass}><Facebook size={18} /></a>
             <a href="/" className={socialLinkClass}><Mail size={18} /></a>
@@ -52,6 +52,17 @@ export default function Footer() {
             <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className={socialLinkClass}><TikTokIcon size={18} /></a>
             <a href="https://linktr.ee" target="_blank" rel="noopener noreferrer" className={socialLinkClass}><LinktreeIcon size={18} /></a>
           </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 xl:px-8 mt-12 pt-8 border-t border-zinc-800">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-2">
+          <p className="text-sm text-gray-500">
+            © {new Date().getFullYear()} Stowarzyszenie Trzymaj Się, Kocie! Wszelkie prawa zastrzeżone.
+          </p>
+          <p className="text-sm text-gray-500">
+            KRS: 0001081032
+          </p>
         </div>
       </div>
     </footer>

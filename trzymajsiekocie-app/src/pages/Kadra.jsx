@@ -152,9 +152,10 @@ export default function Kadra() {
             >
               <div className="sm:w-40 sm:flex-shrink-0 flex justify-center sm:justify-start">
                 <div
-                  className={`w-28 h-28 md:w-32 md:h-32 rounded-3xl bg-gradient-to-br ${member.accent} shadow-md flex items-center justify-center text-white text-4xl md:text-5xl font-bold`}
+                  className={`w-28 h-28 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br ${member.accent} shadow-md flex items-center justify-center text-white text-4xl md:text-5xl font-bold relative overflow-hidden`}
                 >
-                  {member.initials}
+                  <span className="relative z-10">{member.initials}</span>
+                  <div className="absolute inset-0 bg-white/10" />
                 </div>
               </div>
 

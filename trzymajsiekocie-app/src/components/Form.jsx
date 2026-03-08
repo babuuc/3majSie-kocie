@@ -1,10 +1,19 @@
 import { useState } from 'react';
+import catSprite from '../assets/do-formsa.png';
 
 const labelClass = 'block text-sm font-semibold text-gray-700 mb-1 mt-4';
 const inputClass = 'input-base';
 const radioLabelClass = 'flex items-center space-x-2 text-gray-700 cursor-pointer hover:bg-gray-100 p-2 rounded-md transition-colors';
 
-const catFaces = ['😺', '😺', '😸', '😻', '😺', '😻'];
+// Spritesheet is 2 columns x 3 rows, reading left-to-right, top-to-bottom
+const spritePositions = [
+  { col: 0, row: 0 },
+  { col: 1, row: 0 },
+  { col: 0, row: 1 },
+  { col: 1, row: 1 },
+  { col: 0, row: 2 },
+  { col: 1, row: 2 },
+];
 
 const AdoptionForm = ({ catName }) => {
   const [step, setStep] = useState(1);
@@ -154,10 +163,17 @@ const AdoptionForm = ({ catName }) => {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4">
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-        <div className="flex flex-col items-center justify-center md:w-1/3 py-8 bg-gradient-to-b from-orange-50 to-white">
-          <span className="text-[7rem] md:text-[8rem] transition-all duration-500" aria-label="kot">
-            {catFaces[step - 1]}
-          </span>
+        <div className="flex flex-col items-center justify-center md:w-1/3 py-8 bg-gradient-to-b from-white to-white">
+          <div
+            className="w-36 h-28 md:w-44 md:h-32"
+            aria-label="kot"
+            style={{
+              backgroundImage: `url(${catSprite})`,
+              backgroundSize: '200% 300%',
+              backgroundPosition: `${spritePositions[step - 1].col * 100}% ${spritePositions[step - 1].row * 50}%`,
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
         </div>
         <div className="md:w-2/3 p-8">
           <div className="bg-gray-200 h-2 w-full mb-4 rounded-full overflow-hidden">

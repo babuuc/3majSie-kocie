@@ -51,7 +51,8 @@ export default function HistorieGrid() {
 
   return (
     <section className="section-container section-content">
-      <div className="mb-10 text-center">
+      <div className="mb-12 text-center">
+        <span className="section-label">Adopcje</span>
         <h2 className="heading-section mb-3">
           Poznaj ich historie
         </h2>
