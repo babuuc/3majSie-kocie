@@ -50,8 +50,8 @@ export default function HistorieGrid() {
   const { images, loading } = useCatImages(stories.length);
 
   return (
-    <section className="section-container pt-4 pb-12 md:pt-5 md:pb-14 lg:pt-6 lg:pb-[4.5rem]">
-      <div className="mb-8 text-center">
+    <section className="section-container section-content">
+      <div className="mb-12 text-center">
         <span className="section-label">Adopcje</span>
         <h2 className="heading-section mb-3">
           Poznaj ich historie
