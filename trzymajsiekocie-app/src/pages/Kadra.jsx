@@ -48,12 +48,12 @@ const teamMembers = [
 export default function Kadra() {
   return (
     <div className="bg-gradient-to-b from-orange-50 via-white to-amber-50">
-      <section className="section-container section-hero">
-        <div className="max-w-4xl mx-auto text-center mb-12 lg:mb-16">
+      <section className="section-container py-8 md:py-9 lg:py-10">
+        <div className="max-w-4xl mx-auto text-center mb-6 lg:mb-8">
           <span className="section-label">
             O nas
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-3">
             Stowarzyszenie Trzymaj Się, Kocie!
           </h1>
           <p className="text-body text-lg md:text-xl max-w-3xl mx-auto">

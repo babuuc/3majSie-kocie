@@ -4,13 +4,13 @@ export default function Kalendarz() {
   return (
     <div>
       <section className="hero-gradient">
-        <div className="section-container section-hero">
+        <div className="section-container py-4 md:py-5 lg:py-6">
           <div className="max-w-2xl">
             <span className="section-label">
               <CalendarDays size={16} />
               Kalendarz
             </span>
-            <h1 className="heading-page mb-4">Nadchodzące wydarzenia</h1>
+            <h1 className="heading-page mb-2">Nadchodzące wydarzenia</h1>
             <p className="text-body text-lg">
               Śledź nasze najbliższe bazarki, kiermasze i spotkania.
             </p>
@@ -18,7 +18,7 @@ export default function Kalendarz() {
         </div>
       </section>
 
-      <section className="section-container section-content">
+      <section className="section-container pt-3 pb-12 md:pt-4 md:pb-14 lg:pt-5 lg:pb-[4.5rem]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {[
             { month: 'Marzec', day: '15', title: 'Bazarek wiosenny', desc: 'Facebookowy bazarek z fantami, biżuterią i gadżetami.', type: 'Bazarek' },
