@@ -2,22 +2,22 @@ import volunteerPhoto from '../../assets/kitten-volunteer.jpeg';
 
 export default function WolontariatHero() {
   return (
-    <section className="relative bg-gradient-to-br from-orange-50 via-white to-amber-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16 lg:py-20">
+    <section className="relative hero-gradient overflow-hidden">
+      <div className="section-container section-hero">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
-            <span className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider mb-3">
+            <span className="section-label">
               Wolontariat
             </span>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-5 leading-tight">
+            <h1 className="heading-page mb-5">
               Zostań wolontariuszem
             </h1>
-            <p className="text-gray-500 text-lg max-w-md leading-relaxed">
+            <p className="text-body text-lg max-w-md">
               TSK! tworzą ludzie, którzy pomagają kotom na bardzo różne sposoby.
               Wolontariat u nas to nie tylko sprzątanie po kocie — to organizacja,
               komunikacja, wydarzenia, interwencje i wsparcie codziennej pracy fundacji.
             </p>
-            <p className="text-gray-500 mt-3 max-w-md leading-relaxed">
+            <p className="text-body mt-3 max-w-md">
               Jeśli chcesz pomagać, ale nie wiesz jeszcze jak — odezwij się.
               Znajdziemy formę działania, która będzie pasować do Ciebie.
             </p>

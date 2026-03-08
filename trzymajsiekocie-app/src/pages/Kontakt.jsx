@@ -6,17 +6,17 @@ import catPhoto from '../assets/snusia_koksik.webp';
 export default function Kontakt() {
   return (
     <div>
-      <section className="relative bg-gradient-to-br from-orange-50 via-white to-amber-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16 lg:py-20">
+      <section className="relative hero-gradient overflow-hidden">
+        <div className="section-container section-hero">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <span className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider mb-3">
+              <span className="section-label">
                 Skontaktuj się
               </span>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight">
+              <h1 className="heading-page mb-4">
                 Porozmawiajmy!
               </h1>
-              <p className="text-gray-500 text-lg max-w-md">
+              <p className="text-body text-lg max-w-md">
                 Masz pytania? Chcesz pomóc? Napisz do nas — chętnie odpowiemy na każdą wiadomość.
               </p>
             </div>
@@ -34,7 +34,7 @@ export default function Kontakt() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 xl:px-8 py-14">
+      <section className="section-container section-content">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2 space-y-8">
             <KontaktInfo />

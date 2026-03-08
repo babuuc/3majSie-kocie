@@ -34,7 +34,7 @@ function CatCarousel() {
   }
 
   if (cats.length === 0) {
-    return <p className="text-center text-gray-500">Nie udało się załadować zdjęć kotów.</p>;
+    return <p className="text-center text-muted">Nie udało się załadować zdjęć kotów.</p>;
   }
 
   return (
@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <div>
       <section className="bg-gradient-to-br from-orange-500 via-orange-400 to-amber-400 text-white">
-        <div className="max-w-7xl mx-auto px-4 xl:px-8 py-20 text-center">
+        <div className="section-container py-20 text-center">
           <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2 mb-8 text-sm font-medium animate-fade-in">
             <Heart size={16} className="fill-white" />
             Pomóż naszym podopiecznym
@@ -116,13 +116,13 @@ export default function Home() {
       </section>
 
       <section className="bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 xl:px-8">
+        <div className="section-container">
           <FadeIn>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+              <h2 className="heading-section text-3xl md:text-4xl mb-3">
                 Poznaj naszych podopiecznych 😻
               </h2>
-              <p className="text-gray-500 text-lg max-w-xl mx-auto">
+              <p className="text-body text-lg max-w-xl mx-auto">
                 Każdy z nich czeka na kochający dom. Może to właśnie Ty będziesz ich nowym opiekunem?
               </p>
             </div>
@@ -135,13 +135,13 @@ export default function Home() {
       </section>
 
       <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 xl:px-8">
+        <div className="section-container">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6">
+            <h2 className="heading-section text-3xl md:text-4xl text-center mb-6">
               Jak możesz pomóc?
             </h2>
 
-            <p className="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-14">
+            <p className="text-center text-lg text-body max-w-2xl mx-auto mb-14">
               Pod opieką mamy aktualnie <span className="font-bold text-orange-500">ponad 100 kotów</span>.
             </p>
           </FadeIn>
@@ -161,7 +161,7 @@ export default function Home() {
                 href="https://ocalonelapki.pl/organizacja/331/trzymaj-sie-kocie"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-colors shadow-md hover:shadow-lg"
+                className="btn btn-primary"
               >
                 Sprezentuj naszym kotom karmę 🧡
               </a>

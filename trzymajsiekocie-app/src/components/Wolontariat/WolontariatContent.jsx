@@ -24,12 +24,12 @@ const activities = [
 
 export default function WolontariatContent() {
   return (
-    <section className="max-w-7xl mx-auto px-4 xl:px-8 py-14">
+    <section className="section-container section-content">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
         <div>
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">Co robimy?</h2>
-          <p className="text-gray-500 mb-6 leading-relaxed">
+          <h2 className="heading-section mb-6">Co robimy?</h2>
+          <p className="text-body mb-6">
             Pomagamy kotom na wiele sposobów. Oto część z nich:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -45,26 +45,26 @@ export default function WolontariatContent() {
         </div>
 
         <div className="space-y-8">
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 lg:p-8">
+          <div className="card-base p-6 lg:p-8">
             <h2 className="text-xl font-bold text-gray-800 mb-3">Kogo szukamy?</h2>
-            <p className="text-sm text-gray-500 leading-relaxed">
+            <p className="text-sm text-body">
               Osób odpowiedzialnych, zaangażowanych i empatycznych. Nie musisz mieć
               doświadczenia — ważniejsze są chęci, komunikacja i gotowość do działania.
             </p>
-            <p className="text-sm text-gray-500 leading-relaxed mt-3">
+            <p className="text-sm text-body mt-3">
               Mile widziane są też konkretne umiejętności: robienie zdjęć, pisanie,
               ogarnianie social mediów, organizacja, kontakt z ludźmi czy pomoc przy wydarzeniach.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 lg:p-8">
+          <div className="card-base p-6 lg:p-8">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-9 h-9 rounded-lg bg-orange-50 flex items-center justify-center shrink-0">
                 <GraduationCap size={18} className="text-orange-500" />
               </div>
               <h2 className="text-xl font-bold text-gray-800">Uczysz się? Też możesz pomagać</h2>
             </div>
-            <p className="text-sm text-gray-500 leading-relaxed">
+            <p className="text-sm text-body">
               Jeśli jesteś uczniem albo uczennicą, również możesz do nas dołączyć.
               Pomożemy dobrać odpowiednią formę zaangażowania. Taka aktywność może być
               wartościowym doświadczeniem szkolnym i wolontariackim.
@@ -75,13 +75,13 @@ export default function WolontariatContent() {
 
       <div className="mt-14 text-center bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8 lg:p-12">
         <h2 className="text-2xl font-bold text-gray-800 mb-3">Dołącz do nas</h2>
-        <p className="text-gray-500 max-w-md mx-auto mb-6">
+        <p className="text-body max-w-md mx-auto mb-6">
           Napisz kilka słów o sobie: ile masz czasu, jak chcesz pomagać
           i czy możesz działać na miejscu, czy zdalnie. Może właśnie na Ciebie czekamy.
         </p>
         <Link
           to="/kontakt"
-          className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          className="btn btn-primary btn-rect"
         >
           Napisz do nas
         </Link>

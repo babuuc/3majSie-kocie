@@ -2,22 +2,22 @@ import catLoveLogo from '../../assets/love-300x219.png';
 
 export default function HistorieHero() {
   return (
-    <section className="relative bg-gradient-to-br from-orange-50 via-white to-amber-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16 lg:py-20">
+    <section className="relative hero-gradient overflow-hidden">
+      <div className="section-container section-hero">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
           <div className="lg:col-span-2">
-            <span className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider mb-3">
+            <span className="section-label">
               Nasze sukcesy
             </span>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-5 leading-tight">
+            <h1 className="heading-page mb-5">
               Szczęśliwe historie
             </h1>
-            <p className="text-gray-500 text-lg max-w-xl leading-relaxed">
+            <p className="text-body text-lg max-w-xl">
               Marzymy o tym, aby każdy kot znalazł dom, w którym będzie kochany, bezpieczny
               i zadbany. Adoptując naszych podopiecznych dajesz im szansę na nowe życie, bez
               bólu, strachu i głodu, który towarzyszył im na ulicy.
             </p>
-            <p className="text-gray-500 mt-3 max-w-xl leading-relaxed">
+            <p className="text-body mt-3 max-w-xl">
               Chcemy dzielić się szczęśliwymi historiami i pięknymi przemianami kotów —
               ich zadowolone mruczenie jest dla nas najlepszą nagrodą.
             </p>

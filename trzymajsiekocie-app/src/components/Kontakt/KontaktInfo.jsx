@@ -13,7 +13,7 @@ function InfoRow({ icon: Icon, children }) {
 
 export default function KontaktInfo() {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 lg:p-8 space-y-5">
+    <div className="card-base p-6 lg:p-8 space-y-5">
       <h2 className="text-xl font-bold text-gray-800">Dane organizacji</h2>
 
       <div className="space-y-4 text-gray-600">
@@ -24,12 +24,12 @@ export default function KontaktInfo() {
         </InfoRow>
 
         <InfoRow icon={Hash}>
-          <span className="text-gray-500">KRS:</span>{' '}
+          <span className="text-muted">KRS:</span>{' '}
           <span className="font-medium text-gray-800">0001081032</span>
         </InfoRow>
 
         <InfoRow icon={CreditCard}>
-          <span className="text-gray-500">Nr konta:</span>{' '}
+          <span className="text-muted">Nr konta:</span>{' '}
           <span className="font-medium text-gray-800">07 1240 5400 1111 0011 3421 6831</span>
         </InfoRow>
 
@@ -44,7 +44,7 @@ export default function KontaktInfo() {
             <a href="tel:+48664429583" className="font-medium text-gray-800 hover:text-orange-500 transition-colors">664 429 583</a>
           </p>
           <p className="mt-0.5">
-            <span className="text-gray-500">BLIK:</span>{' '}
+            <span className="text-muted">BLIK:</span>{' '}
             <a href="tel:+48733325376" className="font-medium text-gray-800 hover:text-orange-500 transition-colors">733 325 376</a>
           </p>
         </InfoRow>

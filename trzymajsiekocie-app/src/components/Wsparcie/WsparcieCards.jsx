@@ -116,12 +116,12 @@ const cards = [
 
 function WsparcieCard({ icon: Icon, title, description, link, externalLink }) {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
+    <div className="card-base card-base-hover p-6 flex flex-col">
       <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center mb-4 shrink-0">
         <Icon size={20} className="text-orange-500" />
       </div>
       <h3 className="text-lg font-bold text-gray-800 mb-2">{title}</h3>
-      <p className="text-sm text-gray-500 leading-relaxed flex-grow">{description}</p>
+      <p className="text-sm text-muted leading-relaxed flex-grow">{description}</p>
       {link && (
         <Link
           to={link.to}
@@ -146,12 +146,12 @@ function WsparcieCard({ icon: Icon, title, description, link, externalLink }) {
 
 export default function WsparcieCards() {
   return (
-    <section className="max-w-7xl mx-auto px-4 xl:px-8 py-14">
+    <section className="section-container section-content">
       <div className="mb-10 text-center">
-        <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-3">
+        <h2 className="heading-section mb-3">
           Sposoby na wsparcie
         </h2>
-        <p className="text-gray-500 max-w-lg mx-auto">
+        <p className="text-body max-w-lg mx-auto">
           Każda forma pomocy jest dla nas ogromnie ważna — wybierz tę, która pasuje do Ciebie.
         </p>
       </div>

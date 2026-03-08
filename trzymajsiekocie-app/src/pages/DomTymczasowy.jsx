@@ -44,18 +44,18 @@ const steps = [
 export default function DomTymczasowy() {
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-amber-50">
-        <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16 lg:py-20">
+      <section className="relative overflow-hidden hero-gradient">
+        <div className="section-container section-hero">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
             <div>
-              <span className="inline-flex items-center gap-2 text-sm font-semibold text-orange-500 uppercase tracking-wider mb-4">
+              <span className="section-label inline-flex items-center gap-2">
                 <Home size={16} />
                 Zostań domem tymczasowym
               </span>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-5 leading-tight">
+              <h1 className="heading-page mb-5">
                 Dom tymczasowy to najlepsza alternatywa dla schroniska.
               </h1>
-              <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
+              <p className="text-body text-lg max-w-2xl">
                 Dom tymczasowy to podstawowa komórka rodzinna w naszym stowarzyszeniu.
                 To dom, w którym kot mieszka, aż zgłoszą się chętni do adopcji.
               </p>
@@ -63,14 +63,14 @@ export default function DomTymczasowy() {
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/kontakt"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-white font-semibold hover:bg-orange-600 transition-colors"
+                  className="btn btn-primary"
                 >
                   Chcę zostać domem tymczasowym
                   <ArrowRight size={18} />
                 </Link>
                 <Link
                   to="/wsparcie"
-                  className="inline-flex items-center justify-center rounded-full border border-orange-200 px-6 py-3 text-orange-600 font-semibold hover:border-orange-300 hover:bg-orange-50 transition-colors"
+                  className="btn btn-outline"
                 >
                   Inne formy pomocy
                 </Link>
@@ -78,25 +78,25 @@ export default function DomTymczasowy() {
             </div>
 
             <div className="relative">
-              <div className="absolute -inset-4 rounded-[2rem] bg-orange-100/70 rotate-3" />
-              <div className="relative rounded-[2rem] border border-orange-100 bg-white shadow-xl p-8 lg:p-10">
+              <div className="absolute -inset-4 rounded-3xl bg-orange-100/70 rotate-3" />
+              <div className="relative rounded-3xl border border-orange-100 bg-white shadow-xl p-8 lg:p-10">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-500 mb-4">
                   W skrócie
                 </p>
                 <div className="space-y-5">
                   <div>
                     <p className="text-3xl font-bold text-gray-800">1 kot</p>
-                    <p className="text-sm text-gray-500 mt-1">może dostać bezpieczną przestrzeń zamiast schroniska</p>
+                    <p className="text-sm text-muted mt-1">może dostać bezpieczną przestrzeń zamiast schroniska</p>
                   </div>
                   <div className="h-px bg-gray-100" />
                   <div>
                     <p className="text-3xl font-bold text-gray-800">Ty decydujesz</p>
-                    <p className="text-sm text-gray-500 mt-1">na jak długo możesz przyjąć kota do siebie</p>
+                    <p className="text-sm text-muted mt-1">na jak długo możesz przyjąć kota do siebie</p>
                   </div>
                   <div className="h-px bg-gray-100" />
                   <div>
                     <p className="text-3xl font-bold text-gray-800">Masz wsparcie</p>
-                    <p className="text-sm text-gray-500 mt-1">zapewniamy wyprawkę, zaopatrzenie i opiekę weterynaryjną</p>
+                    <p className="text-sm text-muted mt-1">zapewniamy wyprawkę, zaopatrzenie i opiekę weterynaryjną</p>
                   </div>
                 </div>
               </div>
@@ -105,12 +105,12 @@ export default function DomTymczasowy() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 xl:px-8 py-14 lg:py-16">
+      <section className="section-container section-content">
         <div className="mb-10 max-w-2xl">
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-3">
+          <h2 className="heading-section mb-3">
             Najważniejsze informacje o domu tymczasowym
           </h2>
-          <p className="text-gray-500 leading-relaxed">
+          <p className="text-body">
             Jeśli rozważasz prowadzenie domu tymczasowego, poniżej znajdziesz najważniejsze odpowiedzi na pytania, które pojawiają się najczęściej.
           </p>
         </div>
@@ -119,7 +119,7 @@ export default function DomTymczasowy() {
           {infoCards.map(({ icon: Icon, title, description }) => (
             <article
               key={title}
-              className="rounded-3xl border border-gray-100 bg-white p-7 shadow-sm hover:shadow-md transition-shadow"
+              className="card-base card-base-hover p-7"
             >
               <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center mb-5">
                 <Icon className="text-orange-500" size={22} />
@@ -132,15 +132,15 @@ export default function DomTymczasowy() {
       </section>
 
       <section className="bg-white border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 xl:px-8 py-14 lg:py-16 grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 items-start">
+        <div className="section-container section-content grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-orange-500 mb-3">
               Jak to wygląda w praktyce
             </p>
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="heading-section mb-4">
               Zostanie domem tymczasowym to prosty proces.
             </h2>
-            <p className="text-gray-600 leading-relaxed max-w-xl">
+            <p className="text-body max-w-xl">
               Nie robimy nalotu ekipy śledczej. Chcemy po prostu poznać Ciebie, porozmawiać i upewnić się, że kot będzie miał u Ciebie bezpieczne warunki.
             </p>
           </div>
@@ -154,15 +154,15 @@ export default function DomTymczasowy() {
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-orange-500 font-bold shadow-sm">
                   {index + 1}
                 </div>
-                <p className="text-gray-700 leading-relaxed">{step}</p>
+                <p className="text-body leading-relaxed">{step}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 xl:px-8 py-16">
-        <div className="rounded-[2rem] bg-gray-900 px-6 py-10 lg:px-10 lg:py-12 text-white flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+      <section className="section-container section-hero">
+        <div className="rounded-2xl bg-gray-900 px-6 py-10 lg:px-10 lg:py-12 text-white flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-wider text-orange-300 mb-3">
               Chcesz spróbować?
@@ -178,13 +178,13 @@ export default function DomTymczasowy() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               to="/kontakt"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 font-semibold text-gray-900 hover:bg-orange-50 transition-colors"
+              className="btn btn-primary bg-white text-gray-900 hover:bg-orange-50"
             >
               Skontaktuj się z nami
             </Link>
             <Link
               to="/faq"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 font-semibold text-white hover:bg-white/10 transition-colors"
+              className="btn btn-primary border border-white/20 bg-transparent hover:bg-white/10"
             >
               Zobacz FAQ
             </Link>
