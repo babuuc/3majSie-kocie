@@ -32,7 +32,6 @@ export default function Header() {
           <Link to="/" className="hover:text-orange-500 transition-colors">Strona główna</Link>
 
           <NavDropdown label={<span className="font-extrabold">Adoptuj</span>}>
-            <DropdownLink to="/adoptuj">Adoptuj</DropdownLink>
             <DropdownLink to="/adopcja">Adopcja</DropdownLink>
             <DropdownLink to="/adopcja-wirtualna">Adopcja wirtualna</DropdownLink>
           </NavDropdown>

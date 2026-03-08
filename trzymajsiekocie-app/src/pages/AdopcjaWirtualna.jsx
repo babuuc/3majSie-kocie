@@ -1,6 +1,43 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import kotyData from '../data/koty.json';
+import useCatImages from '../hooks/useCatImages';
+
+function CatImage({ apiImage, localImage, color, altText }) {
+  const [src, setSrc] = useState(apiImage || localImage);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    if (apiImage) {
+      setSrc(apiImage);
+      setFailed(false);
+    }
+  }, [apiImage]);
+
+  if (failed || !src) {
+    return (
+      <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold" style={{ backgroundColor: color }}>
+        🐱
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={altText}
+      className="w-full h-full object-cover"
+      loading="lazy"
+      onError={() => {
+        if (localImage && src !== localImage) {
+          setSrc(localImage);
+        } else {
+          setFailed(true);
+        }
+      }}
+    />
+  );
+}
 
 export default function AdopcjaWirtualna() {
   const [showFormModal, setShowFormModal] = useState(false);
@@ -33,6 +70,7 @@ export default function AdopcjaWirtualna() {
 
   // Filtruj koty dostępne do adopcji wirtualnej
   const virtualCats = kotyData.koty.filter(kot => kot.adopcjaWirtualna !== null);
+  const { images: apiImages } = useCatImages(virtualCats.length);
 
   const handleOpenForm = (cat, e) => {
     e.preventDefault();
@@ -54,25 +92,6 @@ export default function AdopcjaWirtualna() {
   };
 
   const getLocalCatImage = (cat) => cat.images?.[0] || null;
-
-  const getPrimaryCatImage = (cat) => cat.apiImage || getLocalCatImage(cat);
-
-  const handleImageError = (event, backgroundColor = '#e0e0e0') => {
-    event.currentTarget.style.display = 'none';
-    event.currentTarget.parentElement.style.backgroundColor = backgroundColor;
-    event.currentTarget.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white text-4xl font-bold">🐱</div>';
-  };
-
-  const handleCatImageError = (event, cat, backgroundColor = '#e0e0e0') => {
-    const fallbackImage = getLocalCatImage(cat);
-
-    if (fallbackImage && event.currentTarget.getAttribute('src') !== fallbackImage) {
-      event.currentTarget.src = fallbackImage;
-      return;
-    }
-
-    handleImageError(event, backgroundColor);
-  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16">
@@ -189,7 +208,7 @@ export default function AdopcjaWirtualna() {
         <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Kotki czekające na wirtualnych opiekunów</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {virtualCats.map((cat) => (
+          {virtualCats.map((cat, index) => (
             <Link
               key={cat.id}
               to={`/adoptuj/${cat.id}`}
@@ -209,19 +228,12 @@ export default function AdopcjaWirtualna() {
                   backgroundColor: categories.find(c => c.id === cat.category)?.color || '#e0e0e0'
                 }}
               >
-                {getPrimaryCatImage(cat) ? (
-                  <img
-                    src={getPrimaryCatImage(cat)}
-                    alt={cat.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    onError={(event) => handleCatImageError(event, cat, categories.find(c => c.id === cat.category)?.color || '#e0e0e0')}
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold">
-                    🐱
-                  </div>
-                )}
+                <CatImage
+                  apiImage={apiImages[index]}
+                  localImage={getLocalCatImage(cat)}
+                  color={categories.find(c => c.id === cat.category)?.color || '#e0e0e0'}
+                  altText={cat.name}
+                />
               </div>
               
               {/* Informacje o kocie */}
