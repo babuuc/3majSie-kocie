@@ -4,6 +4,12 @@
    DESIGN SYSTEM — Trzymaj Się, Kocie!
    ══════════════════════════════════════════════════════════ */
 
+/* ── Cursive Font ── */
+
+.font-cursive {
+  font-family: 'Dancing Script', cursive;
+}
+
 /* ── Layout ── */
 
 .section-container {

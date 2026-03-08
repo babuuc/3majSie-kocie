@@ -52,8 +52,6 @@ function MobileSubLink({ to, children, onClick }) {
   );
 }
 
-const socialLinkClass = 'w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-orange-50 hover:text-orange-500 transition-colors';
-
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -74,26 +72,27 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 xl:px-8 py-3 lg:py-4 flex justify-between items-center">
-        <div className="flex items-center gap-8">
-          <Link to="/" className="flex items-center gap-2">
-            <img src="/src/assets/logo_navbar.png" alt="Trzymaj Się, Kocie!" className="h-10 sm:h-12 lg:h-14 w-auto" />
+    <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 xl:px-8 py-3 flex justify-between items-center">
+        {/* Logo + nav links */}
+        <div className="flex items-center gap-10">
+          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+            <img src="/src/assets/logo_navbar.png" alt="Trzymaj Się, Kocie!" className="h-8 sm:h-9 w-auto" />
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-700">
-            <Link to="/" className="hover:text-orange-500 transition-colors">Strona główna</Link>
+          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-gray-600">
+            <Link to="/" className="hover:text-gray-900 transition-colors">Strona główna</Link>
 
             <NavDropdown label={<span className="font-extrabold">Adoptuj</span>}>
               <DropdownLink to="/adopcja">Adopcja</DropdownLink>
               <DropdownLink to="/adopcja-wirtualna">Adopcja wirtualna</DropdownLink>
             </NavDropdown>
 
-            <Link to="/wsparcie" className="hover:text-orange-500 transition-colors">Wsparcie</Link>
-            <Link to="/dom-tymczasowy" className="hover:text-orange-500 transition-colors">Dom tymczasowy</Link>
-            <Link to="/aktualnosci" className="hover:text-orange-500 transition-colors">Aktualności</Link>
-            <Link to="/kalendarz" className="hover:text-orange-500 transition-colors">Kalendarz</Link>
-            <Link to="/wolontariat" className="hover:text-orange-500 transition-colors">Zostań wolontariuszem</Link>
+            <Link to="/wsparcie" className="hover:text-gray-900 transition-colors">Wsparcie</Link>
+            <Link to="/dom-tymczasowy" className="hover:text-gray-900 transition-colors">Dom tymczasowy</Link>
+            <Link to="/aktualnosci" className="hover:text-gray-900 transition-colors">Aktualności</Link>
+            <Link to="/kalendarz" className="hover:text-gray-900 transition-colors">Kalendarz</Link>
+            <Link to="/wolontariat" className="hover:text-gray-900 transition-colors">Zostań wolontariuszem</Link>
 
             <NavDropdown label="O nas">
               <DropdownLink to="/kadra">Kadra</DropdownLink>
@@ -104,23 +103,22 @@ export default function Header() {
           </nav>
         </div>
 
+        {/* Right side: social icons */}
         <div className="flex items-center gap-3">
-          {/* Desktop social icons */}
-          <div className="hidden xl:flex items-center space-x-4 text-gray-500">
-            <Instagram size={18} className="hover:text-orange-500 cursor-pointer transition-colors" />
-            <Facebook size={18} className="hover:text-orange-500 cursor-pointer transition-colors" />
-            <Mail size={18} className="hover:text-orange-500 cursor-pointer transition-colors" />
+          <div className="hidden xl:flex items-center gap-3 text-gray-500">
+            <div className="w-px h-5 bg-gray-200 mx-1" />
+            <Instagram size={17} className="hover:text-orange-500 cursor-pointer transition-colors" />
+            <Facebook size={17} className="hover:text-orange-500 cursor-pointer transition-colors" />
+            <Mail size={17} className="hover:text-orange-500 cursor-pointer transition-colors" />
             <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-              <Linkedin size={18} className="hover:text-orange-500 cursor-pointer transition-colors" />
+              <Linkedin size={17} className="hover:text-orange-500 cursor-pointer transition-colors" />
             </a>
             <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
-              <TikTokIcon size={18} className="hover:text-orange-500 cursor-pointer transition-colors" />
+              <TikTokIcon size={17} className="hover:text-orange-500 cursor-pointer transition-colors" />
             </a>
             <a href="https://linktr.ee" target="_blank" rel="noopener noreferrer">
-              <LinktreeIcon size={18} className="hover:text-orange-500 cursor-pointer transition-colors" />
+              <LinktreeIcon size={17} className="hover:text-orange-500 cursor-pointer transition-colors" />
             </a>
-            <div className="w-px h-6 bg-gray-300 mx-2" />
-            <Search size={20} className="hover:text-orange-500 cursor-pointer transition-colors" />
           </div>
 
           {/* Mobile hamburger */}
@@ -184,16 +182,15 @@ export default function Header() {
             </MobileAccordion>
           </div>
 
-          {/* Mobile social icons */}
           <div className="mt-8 pt-6 border-t border-gray-100">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Obserwuj nas</p>
             <div className="flex items-center gap-2 flex-wrap">
-              <a href="/" className={socialLinkClass}><Instagram size={16} /></a>
-              <a href="/" className={socialLinkClass}><Facebook size={16} /></a>
-              <a href="/" className={socialLinkClass}><Mail size={16} /></a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className={socialLinkClass}><Linkedin size={16} /></a>
-              <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className={socialLinkClass}><TikTokIcon size={16} /></a>
-              <a href="https://linktr.ee" target="_blank" rel="noopener noreferrer" className={socialLinkClass}><LinktreeIcon size={16} /></a>
+              <a href="/" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-orange-50 hover:text-orange-500 transition-colors"><Instagram size={16} /></a>
+              <a href="/" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-orange-50 hover:text-orange-500 transition-colors"><Facebook size={16} /></a>
+              <a href="/" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-orange-50 hover:text-orange-500 transition-colors"><Mail size={16} /></a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-orange-50 hover:text-orange-500 transition-colors"><Linkedin size={16} /></a>
+              <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-orange-50 hover:text-orange-500 transition-colors"><TikTokIcon size={16} /></a>
+              <a href="https://linktr.ee" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-orange-50 hover:text-orange-500 transition-colors"><LinktreeIcon size={16} /></a>
             </div>
           </div>
         </nav>
