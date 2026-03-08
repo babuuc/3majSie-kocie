@@ -1,19 +1,16 @@
 import { useState } from 'react';
-import catSprite from '../assets/do-formsa.png';
+import cat1Gif from '../assets/cat1.gif';
+import cat2Gif from '../assets/cat2.gif';
+import cat3Gif from '../assets/cat3.gif';
+import cat4Gif from '../assets/cat4.gif';
+import cat5Gif from '../assets/cat5.gif';
+import cat6Gif from '../assets/cat6.gif';
 
 const labelClass = 'block text-sm font-semibold text-gray-700 mb-1 mt-4';
 const inputClass = 'input-base';
 const radioLabelClass = 'flex items-center space-x-2 text-gray-700 cursor-pointer hover:bg-gray-100 p-2 rounded-md transition-colors';
 
-// Spritesheet is 2 columns x 3 rows, reading left-to-right, top-to-bottom
-const spritePositions = [
-  { col: 0, row: 0 },
-  { col: 1, row: 0 },
-  { col: 0, row: 1 },
-  { col: 1, row: 1 },
-  { col: 0, row: 2 },
-  { col: 1, row: 2 },
-];
+const stepGifs = [cat1Gif, cat2Gif, cat3Gif, cat4Gif, cat5Gif, cat6Gif];
 
 const AdoptionForm = ({ catName }) => {
   const [step, setStep] = useState(1);
@@ -156,6 +153,7 @@ const AdoptionForm = ({ catName }) => {
     ),
   ];
   const totalSteps = steps.length;
+  const currentGif = stepGifs[step - 1];
 
   const nextStep = () => setStep((prev) => Math.min(prev + 1, totalSteps));
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
@@ -163,16 +161,11 @@ const AdoptionForm = ({ catName }) => {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4">
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-        <div className="flex flex-col items-center justify-center md:w-1/3 py-8 bg-gradient-to-b from-white to-white">
-          <div
-            className="w-36 h-28 md:w-44 md:h-32"
-            aria-label="kot"
-            style={{
-              backgroundImage: `url(${catSprite})`,
-              backgroundSize: '200% 300%',
-              backgroundPosition: `${spritePositions[step - 1].col * 100}% ${spritePositions[step - 1].row * 50}%`,
-              backgroundRepeat: 'no-repeat',
-            }}
+        <div className="flex items-center justify-center md:w-1/3 p-6 bg-gradient-to-br from-orange-50 via-white to-amber-50">
+          <img
+            src={currentGif}
+            alt={`Kot dla kroku ${step}`}
+            className="w-full max-w-[220px] h-auto object-contain drop-shadow-sm"
           />
         </div>
         <div className="md:w-2/3 p-8">
