@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import kotyData from '../data/koty.json';
 
 const MIN_GALLERY_IMAGES = 3;
@@ -8,6 +8,7 @@ export default function Adoptuj() {
   const { id } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showZasadyModal, setShowZasadyModal] = useState(false);
+  const navigate = useNavigate();
   
   const kot = kotyData.koty.find(k => k.id === parseInt(id));
 
@@ -149,9 +150,12 @@ export default function Adoptuj() {
 
       {/* Przyciski akcji */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors shadow-lg">
+        <Link
+          to={`/adopcja-ankieta/${kot.id}`}
+          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors shadow-lg flex items-center justify-center text-center"
+        >
           Wypełnij ankietę adopcyjną
-        </button>
+        </Link>
         <button 
           onClick={() => setShowZasadyModal(true)}
           className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors shadow-lg"

@@ -17,6 +17,7 @@ import Kadra from './pages/Kadra';
 import Kalendarz from './pages/Kalendarz';
 import Dokumenty from './pages/Dokumenty';
 import Wolontariat from './pages/Wolontariat';
+import AdopcjaAnkieta from './pages/AdopcjaAnkieta';
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/adoptuj" element={<Adoptuj />} />
           <Route path="/adoptuj/:id" element={<Adoptuj />} />
+          <Route path="/adopcja-ankieta/:id" element={<AdopcjaAnkieta />} />
           <Route path="/adopcja" element={<Adopcja />} />
           <Route path="/galeria-kotow" element={<GaleriaKotow />} />
           <Route path="/adopcja-wirtualna" element={<AdopcjaWirtualna />} />

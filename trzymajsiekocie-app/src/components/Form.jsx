@@ -5,165 +5,12 @@ const labelClass = "block text-sm font-semibold text-gray-700 mb-1 mt-4";
 const inputClass = "w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-gray-50 text-gray-900";
 const radioLabelClass = "flex items-center space-x-2 text-gray-700 cursor-pointer hover:bg-gray-100 p-2 rounded-md transition-colors";
 
-const steps = [
-  // Krok 1
-  (
-    <div className="animate-fadeIn" key={1}>
-      <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">I. Informacje podstawowe</h2>
-      <label className={labelClass}>Imię i nazwisko</label>
-      <input className={inputClass} placeholder="Imię i nazwisko" disabled />
 
-      <label className={labelClass}>Numer telefonu i e-mail</label>
-      <input className={inputClass} placeholder="Telefon i e-mail" disabled />
-
-      <label className={labelClass}>Miejscowość</label>
-      <input className={inputClass} placeholder="Miejscowość" disabled />
-
-      <label className={labelClass}>Imię kota, którym są Państwo zainteresowani</label>
-      <input className={inputClass} placeholder="Imię kota" disabled />
-
-      <label className={labelClass}>Wiek</label>
-      <div className="flex flex-col gap-2">
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>18 – 25 lat</span>
-        </label>
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>26 – 55 lat</span>
-        </label>
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>powyżej 55 lat</span>
-        </label>
-      </div>
-    </div>
-  ),
-  // Krok 2
-  (
-    <div className="animate-fadeIn" key={2}>
-      <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">II. Warunki mieszkaniowe i domownicy</h2>
-      <label className={labelClass}>Typ mieszkania</label>
-      <div className="flex gap-4">
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>Dom jednorodzinny</span>
-        </label>
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>Mieszkanie w bloku lub kamienicy</span>
-        </label>
-      </div>
-
-      <label className={labelClass}>Status mieszkania</label>
-      <div className="flex gap-4">
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>Własnościowe</span>
-        </label>
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>Wynajmowane</span>
-        </label>
-      </div>
-
-      <label className={labelClass}>W przypadku wynajmu: Czy posiadają Państwo zgodę właściciela na kota?</label>
-      <div className="flex gap-4">
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>TAK</span>
-        </label>
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>NIE</span>
-        </label>
-      </div>
-
-      <label className={labelClass}>Które to piętro? (jeśli dotyczy)</label>
-      <input className={inputClass} placeholder="Piętro" disabled />
-
-      <label className={labelClass}>Ilu dorosłych domowników mieszka w gospodarstwie?</label>
-      <input className={inputClass} placeholder="Liczba dorosłych" disabled />
-
-      <label className={labelClass}>Czy w domu są dzieci? (jeśli tak, proszę podać wiek)</label>
-      <input className={inputClass} placeholder="Wiek dzieci" disabled />
-
-      <label className={labelClass}>Czy wszyscy domownicy zgadzają się na adopcję i nikt nie ma alergii na kota?</label>
-      <div className="flex gap-4">
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>TAK</span>
-        </label>
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>NIE</span>
-        </label>
-      </div>
-
-      <label className={labelClass}>Czy kot będzie miał swobodny dostęp do wszystkich pomieszczeń?</label>
-      <div className="flex gap-4">
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>TAK</span>
-        </label>
-        <label className={radioLabelClass}>
-          <input type="radio" disabled className="w-4 h-4 text-blue-600" />
-          <span>NIE</span>
-        </label>
-      </div>
-    </div>
-  ),
-  // Krok 3
-  (
-    <div className="animate-fadeIn" key={3}>
-      <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">III. Doświadczenie</h2>
-      <label className={labelClass}>Czy masz teraz inne zwierzęta?</label>
-      <textarea className={inputClass} rows="3" placeholder="Opisz swoje stado..." disabled />
-    </div>
-  ),
-  // Krok 4
-  (
-    <div className="animate-fadeIn" key={4}>
-      <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">IV. Bezpieczeństwo</h2>
-      <label className={labelClass}>Zabezpieczenia</label>
-      <div className="space-y-2">
-        <label className={radioLabelClass}>
-          <input type="checkbox" disabled className="rounded text-blue-600" />
-          <span>Siatka na balkonie</span>
-        </label>
-        <label className={radioLabelClass}>
-          <input type="checkbox" disabled className="rounded text-blue-600" />
-          <span>Zabezpieczone okna</span>
-        </label>
-      </div>
-    </div>
-  ),
-  // Krok 5
-  (
-    <div className="animate-fadeIn" key={5}>
-      <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">V. Życie z kotem</h2>
-      <label className={labelClass}>Ile godzin dziennie kot będzie sam?</label>
-      <input className={inputClass} disabled />
-      <label className={labelClass}>Wakacje i wyjazdy</label>
-      <textarea className={inputClass} rows="2" disabled />
-    </div>
-  ),
-  // Krok 6
-  (
-    <div className="animate-fadeIn text-center py-4" key={6}>
-      <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">VI. Finalizacja</h2>
-      <p className="text-sm text-gray-500 mb-6">Przeczytałeś wszystko uważnie? Po kliknięciu wyślij, Twoje zgłoszenie trafi do naszych wolontariuszy.</p>
-      <label className={radioLabelClass + " justify-center"}>
-        <input type="checkbox" disabled className="rounded text-blue-600" />
-        <span className="text-sm font-bold">Akceptuję warunki umowy i wizytę</span>
-      </label>
-    </div>
-  ),
-];
 
 
 
 // Emoji koty jako placeholdery (można podmienić na SVG lub obrazy)
+
 const catFaces = [
   '😺', // 1 - lekki uśmiech (kot)
   '😺', // 2 - lekki uśmiech (kot)
@@ -173,8 +20,163 @@ const catFaces = [
   '😻', // 6 - super szczęśliwy (kot)
 ];
 
-const AdoptionForm = () => {
+const AdoptionForm = ({ catName }) => {
   const [step, setStep] = useState(1);
+  const steps = [
+    // Krok 1
+    (
+      <div className="animate-fadeIn" key={1}>
+        <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">I. Informacje podstawowe</h2>
+        <label className={labelClass}>Imię i nazwisko</label>
+        <input className={inputClass} placeholder="Imię i nazwisko" />
+
+        <label className={labelClass}>Numer telefonu i e-mail</label>
+        <input className={inputClass} placeholder="Telefon i e-mail" />
+
+        <label className={labelClass}>Miejscowość</label>
+        <input className={inputClass} placeholder="Miejscowość" />
+
+        <label className={labelClass}>Imię kota, którym są Państwo zainteresowani</label>
+        <input className={inputClass} placeholder="Imię kota" value={catName || ''} readOnly />
+
+        <label className={labelClass}>Wiek</label>
+        <div className="flex flex-col gap-2">
+          <label className={radioLabelClass}>
+            <input type="radio" className="w-4 h-4 text-blue-600" name="wiek" />
+            <span>18 – 25 lat</span>
+          </label>
+          <label className={radioLabelClass}>
+            <input type="radio" className="w-4 h-4 text-blue-600" name="wiek" />
+            <span>26 – 55 lat</span>
+          </label>
+          <label className={radioLabelClass}>
+            <input type="radio" className="w-4 h-4 text-blue-600" name="wiek" />
+            <span>powyżej 55 lat</span>
+          </label>
+        </div>
+      </div>
+    ),
+    // Krok 2
+    (
+      <div className="animate-fadeIn" key={2}>
+        <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">II. Warunki mieszkaniowe i domownicy</h2>
+        <label className={labelClass}>Typ mieszkania</label>
+        <div className="flex gap-4">
+          <label className={radioLabelClass}>
+            <input type="radio" disabled className="w-4 h-4 text-blue-600" />
+            <span>Dom jednorodzinny</span>
+          </label>
+          <label className={radioLabelClass}>
+            <input type="radio" disabled className="w-4 h-4 text-blue-600" />
+            <span>Mieszkanie w bloku lub kamienicy</span>
+          </label>
+        </div>
+
+        <label className={labelClass}>Status mieszkania</label>
+        <div className="flex gap-4">
+          <label className={radioLabelClass}>
+            <input type="radio" disabled className="w-4 h-4 text-blue-600" />
+            <span>Własnościowe</span>
+          </label>
+          <label className={radioLabelClass}>
+            <input type="radio" disabled className="w-4 h-4 text-blue-600" />
+            <span>Wynajmowane</span>
+          </label>
+        </div>
+
+        <label className={labelClass}>W przypadku wynajmu: Czy posiadają Państwo zgodę właściciela na kota?</label>
+        <div className="flex gap-4">
+          <label className={radioLabelClass}>
+            <input type="radio" disabled className="w-4 h-4 text-blue-600" />
+            <span>TAK</span>
+          </label>
+          <label className={radioLabelClass}>
+            <input type="radio" disabled className="w-4 h-4 text-blue-600" />
+            <span>NIE</span>
+          </label>
+        </div>
+
+        <label className={labelClass}>Które to piętro? (jeśli dotyczy)</label>
+        <input className={inputClass} placeholder="Piętro" disabled />
+
+        <label className={labelClass}>Ilu dorosłych domowników mieszka w gospodarstwie?</label>
+        <input className={inputClass} placeholder="Liczba dorosłych" disabled />
+
+        <label className={labelClass}>Czy w domu są dzieci? (jeśli tak, proszę podać wiek)</label>
+        <input className={inputClass} placeholder="Wiek dzieci" disabled />
+
+        <label className={labelClass}>Czy wszyscy domownicy zgadzają się na adopcję i nikt nie ma alergii na kota?</label>
+        <div className="flex gap-4">
+          <label className={radioLabelClass}>
+            <input type="radio" disabled className="w-4 h-4 text-blue-600" />
+            <span>TAK</span>
+          </label>
+          <label className={radioLabelClass}>
+            <input type="radio" disabled className="w-4 h-4 text-blue-600" />
+            <span>NIE</span>
+          </label>
+        </div>
+
+        <label className={labelClass}>Czy kot będzie miał swobodny dostęp do wszystkich pomieszczeń?</label>
+        <div className="flex gap-4">
+          <label className={radioLabelClass}>
+            <input type="radio" disabled className="w-4 h-4 text-blue-600" />
+            <span>TAK</span>
+          </label>
+          <label className={radioLabelClass}>
+            <input type="radio" disabled className="w-4 h-4 text-blue-600" />
+            <span>NIE</span>
+          </label>
+        </div>
+      </div>
+    ),
+    // Krok 3
+    (
+      <div className="animate-fadeIn" key={3}>
+        <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">III. Doświadczenie</h2>
+        <label className={labelClass}>Czy masz teraz inne zwierzęta?</label>
+        <textarea className={inputClass} rows="3" placeholder="Opisz swoje stado..." disabled />
+      </div>
+    ),
+    // Krok 4
+    (
+      <div className="animate-fadeIn" key={4}>
+        <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">IV. Bezpieczeństwo</h2>
+        <label className={labelClass}>Zabezpieczenia</label>
+        <div className="space-y-2">
+          <label className={radioLabelClass}>
+            <input type="checkbox" disabled className="rounded text-blue-600" />
+            <span>Siatka na balkonie</span>
+          </label>
+          <label className={radioLabelClass}>
+            <input type="checkbox" disabled className="rounded text-blue-600" />
+            <span>Zabezpieczone okna</span>
+          </label>
+        </div>
+      </div>
+    ),
+    // Krok 5
+    (
+      <div className="animate-fadeIn" key={5}>
+        <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">V. Życie z kotem</h2>
+        <label className={labelClass}>Ile godzin dziennie kot będzie sam?</label>
+        <input className={inputClass} disabled />
+        <label className={labelClass}>Wakacje i wyjazdy</label>
+        <textarea className={inputClass} rows="2" disabled />
+      </div>
+    ),
+    // Krok 6
+    (
+      <div className="animate-fadeIn text-center py-4" key={6}>
+        <h2 className="text-lg font-bold text-blue-600 border-b pb-2 mb-4">VI. Finalizacja</h2>
+        <p className="text-sm text-gray-500 mb-6">Przeczytałeś wszystko uważnie? Po kliknięciu wyślij, Twoje zgłoszenie trafi do naszych wolontariuszy.</p>
+        <label className={radioLabelClass + " justify-center"}>
+          <input type="checkbox" disabled className="rounded text-blue-600" />
+          <span className="text-sm font-bold">Akceptuję warunki umowy i wizytę</span>
+        </label>
+      </div>
+    ),
+  ];
   const totalSteps = steps.length;
 
   const nextStep = () => setStep((prev) => Math.min(prev + 1, totalSteps));
