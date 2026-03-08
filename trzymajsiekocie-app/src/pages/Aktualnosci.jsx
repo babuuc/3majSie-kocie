@@ -59,7 +59,7 @@ const newsItems = [
 
 function NewsBanner({ item }) {
   return (
-    <div className="overflow-hidden rounded-[2rem] bg-slate-100">
+    <div className="overflow-hidden rounded-2xl bg-gray-100">
       <img src={item.image} alt={item.imageAlt} className="h-auto w-full object-cover" />
     </div>
   );
@@ -70,25 +70,25 @@ export default function Aktualnosci() {
 
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-orange-50">
+      <section className="relative overflow-hidden hero-gradient">
         <div className="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top_left,_rgba(251,146,60,0.16),_transparent_35%),radial-gradient(circle_at_top_right,_rgba(14,165,233,0.12),_transparent_30%)]" />
-        <div className="relative max-w-7xl mx-auto px-4 xl:px-8 py-16 lg:py-20">
+        <div className="relative section-container section-hero">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-2 text-sm font-semibold text-orange-700">
               <Newspaper size={16} />
               Bądź na bieżąco
             </span>
-            <h1 className="mt-5 text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+            <h1 className="mt-5 heading-page">
               Aktualności, wydarzenia i bazarki
             </h1>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl">
+            <p className="mt-4 text-body text-lg max-w-2xl">
               Zebraliśmy tutaj najnowsze informacje o naszych akcjach, spotkaniach i inicjatywach. Każdy wpis możesz rozwinąć, żeby zobaczyć pełne szczegóły.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 xl:px-8 py-14 lg:py-16">
+      <section className="section-container section-content">
         <div className="space-y-10">
           {newsItems.map((item) => {
             const isExpanded = expandedId === item.id;
@@ -96,7 +96,7 @@ export default function Aktualnosci() {
             return (
               <article
                 key={item.id}
-                className="overflow-hidden rounded-[2rem] border border-gray-200 bg-white shadow-[0_24px_60px_-40px_rgba(15,23,42,0.35)]"
+                className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg"
               >
                 <div className="p-4 md:p-6">
                   <NewsBanner item={item} />
@@ -105,7 +105,7 @@ export default function Aktualnosci() {
                 <div className="px-6 pb-6 md:px-10 md:pb-10">
                   <div className="flex flex-col gap-4 border-b border-gray-100 pb-6 md:flex-row md:items-start md:justify-between">
                     <div>
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
                         <span className="inline-flex items-center gap-2">
                           <CalendarDays size={16} className={item.accentClass} />
                           <time dateTime={item.date}>{item.displayDate}</time>
@@ -115,7 +115,7 @@ export default function Aktualnosci() {
                         </span>
                       </div>
 
-                      <h2 className="mt-4 text-3xl md:text-5xl font-bold leading-tight text-[#07105d]">
+                      <h2 className="mt-4 text-3xl md:text-4xl font-bold leading-tight text-gray-800">
                         {item.title}
                       </h2>
                     </div>
@@ -140,7 +140,7 @@ export default function Aktualnosci() {
                       <button
                         type="button"
                         onClick={() => setExpandedId(item.id)}
-                        className="mt-6 inline-flex items-center gap-2 text-lg font-semibold text-[#07105d] underline decoration-orange-300 underline-offset-4 transition-colors hover:text-orange-600"
+                        className="mt-6 inline-flex items-center gap-2 text-lg font-semibold text-gray-800 underline decoration-orange-300 underline-offset-4 transition-colors hover:text-orange-600"
                       >
                         Czytaj dalej
                         <span aria-hidden="true">👉</span>
@@ -149,20 +149,20 @@ export default function Aktualnosci() {
 
                     {isExpanded && (
                       <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(280px,0.8fr)]">
-                        <div className="space-y-5 text-lg leading-8 text-gray-700">
+                        <div className="space-y-5 text-lg leading-8 text-body">
                           {item.body.map((paragraph) => (
                             <p key={paragraph}>{paragraph}</p>
                           ))}
                         </div>
 
-                        <aside className="rounded-[1.75rem] bg-slate-50 p-6 ring-1 ring-gray-100">
+                          <aside className="rounded-2xl bg-gray-50 p-6 ring-1 ring-gray-100">
                           {item.details && (
                             <div>
                               <h3 className="text-lg font-bold text-gray-800">Szczegóły wydarzenia</h3>
                               <div className="mt-4 space-y-4">
                                 {item.details.map((detail) => (
                                   <div key={detail.label} className="rounded-2xl bg-white px-4 py-3 shadow-sm ring-1 ring-gray-100">
-                                    <p className="text-sm font-medium text-gray-500">{detail.label}</p>
+                                    <p className="text-sm font-medium text-muted">{detail.label}</p>
                                     <p className="mt-1 font-semibold text-gray-800">{detail.value}</p>
                                   </div>
                                 ))}
@@ -176,7 +176,7 @@ export default function Aktualnosci() {
                               <div className="mt-4 space-y-4">
                                 {item.schedule.map((event) => (
                                   <div key={event.name} className="rounded-2xl bg-white px-4 py-4 shadow-sm ring-1 ring-gray-100">
-                                    <h4 className="font-bold text-[#07105d]">{event.name}</h4>
+                                    <h4 className="font-bold text-gray-800">{event.name}</h4>
                                     <p className="mt-3 inline-flex items-center gap-2 text-sm text-gray-600">
                                       <Clock3 size={15} className="text-rose-600" />
                                       {event.time}

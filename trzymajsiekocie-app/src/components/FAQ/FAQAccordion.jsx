@@ -81,7 +81,7 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="px-6 pb-5 text-sm text-gray-500 leading-relaxed border-t border-gray-50 pt-4">
+          <div className="px-6 pb-5 text-sm text-muted leading-relaxed border-t border-gray-50 pt-4">
             {answer}
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="max-w-3xl mx-auto px-4 xl:px-8 py-14">
+    <section className="max-w-3xl mx-auto px-4 xl:px-8 section-content">
       <div className="space-y-3">
         {faqData.map((item, index) => (
           <FAQItem
@@ -108,10 +108,10 @@ export default function FAQAccordion() {
       </div>
 
       <div className="mt-12 text-center">
-        <p className="text-gray-500 mb-4">Nie znalazłeś odpowiedzi na swoje pytanie?</p>
+        <p className="text-muted mb-4">Nie znalazłeś odpowiedzi na swoje pytanie?</p>
         <Link
           to="/kontakt"
-          className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          className="btn btn-primary btn-rect"
         >
           Skontaktuj się z nami
         </Link>

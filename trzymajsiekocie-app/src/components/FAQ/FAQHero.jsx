@@ -2,17 +2,17 @@ import faqLogo from '../../assets/pytajnik-300x206.png';
 
 export default function FAQHero() {
   return (
-    <section className="relative bg-gradient-to-br from-orange-50 via-white to-amber-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16 lg:py-20">
+    <section className="relative hero-gradient overflow-hidden">
+      <div className="section-container section-hero">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
           <div className="lg:col-span-2">
-            <span className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider mb-3">
+            <span className="section-label">
               FAQ
             </span>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-5 leading-tight">
+            <h1 className="heading-page mb-5">
               Pytania i odpowiedzi
             </h1>
-            <p className="text-gray-500 text-lg max-w-xl leading-relaxed">
+            <p className="text-body text-lg max-w-xl">
               Znajdziesz tu odpowiedzi na najczęściej pojawiające się pytania.
               Jeśli nie rozwialiśmy wszystkich Twoich wątpliwości, zapraszamy
               do{' '}

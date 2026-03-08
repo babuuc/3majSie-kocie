@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const labelClass = 'block text-sm font-semibold text-gray-700 mb-1 mt-4';
-const inputClass = 'w-full p-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-gray-50 text-gray-900';
+const inputClass = 'input-base';
 const radioLabelClass = 'flex items-center space-x-2 text-gray-700 cursor-pointer hover:bg-gray-100 p-2 rounded-md transition-colors';
 
 const catFaces = ['😺', '😺', '😸', '😻', '😺', '😻'];
@@ -138,7 +138,7 @@ const AdoptionForm = ({ catName }) => {
     (
       <div className="animate-fadeIn text-center py-4" key={6}>
         <h2 className="text-lg font-bold text-orange-600 border-b pb-2 mb-4">VI. Finalizacja</h2>
-        <p className="text-sm text-gray-500 mb-6">Przeczytałeś wszystko uważnie? Po kliknięciu wyślij, Twoje zgłoszenie trafi do naszych wolontariuszy.</p>
+        <p className="text-sm text-muted mb-6">Przeczytałeś wszystko uważnie? Po kliknięciu wyślij, Twoje zgłoszenie trafi do naszych wolontariuszy.</p>
         <label className={radioLabelClass + ' justify-center'}>
           <input type="checkbox" disabled className="rounded accent-orange-500" />
           <span className="text-sm font-bold">Akceptuję warunki umowy i wizytę</span>

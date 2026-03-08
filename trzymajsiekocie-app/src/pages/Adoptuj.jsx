@@ -54,16 +54,16 @@ export default function Adoptuj() {
 
   if (!kot) {
     return (
-      <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">Kot nie został znaleziony</h1>
-        <p className="text-gray-600 text-lg">Przepraszamy, nie możemy znaleźć tego kota.</p>
+      <div className="section-container section-hero">
+        <h1 className="heading-page mb-4">Kot nie został znaleziony</h1>
+        <p className="text-body text-lg">Przepraszamy, nie możemy znaleźć tego kota.</p>
       </div>
     );
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16">
-      <h1 className="text-5xl font-bold text-gray-800 mb-8 text-center">{kot.name}</h1>
+    <div className="section-container section-hero">
+      <h1 className="heading-page text-5xl mb-8 text-center">{kot.name}</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         <div>
@@ -105,31 +105,31 @@ export default function Adoptuj() {
           )}
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg p-8">
+        <div className="card-base shadow-lg p-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">Metryczka</h2>
           <div className="space-y-4">
             <div className="border-b border-gray-200 pb-3">
-              <p className="text-sm text-gray-500 mb-1">Wiek:</p>
+              <p className="text-sm text-muted mb-1">Wiek:</p>
               <p className="text-lg font-semibold text-gray-800">{kot.age}</p>
             </div>
             <div className="border-b border-gray-200 pb-3">
-              <p className="text-sm text-gray-500 mb-1">Szczepienie:</p>
+              <p className="text-sm text-muted mb-1">Szczepienie:</p>
               <p className="text-lg font-semibold text-gray-800">{kot.szczepienie}</p>
             </div>
             <div className="border-b border-gray-200 pb-3">
-              <p className="text-sm text-gray-500 mb-1">Odrobaczenie:</p>
+              <p className="text-sm text-muted mb-1">Odrobaczenie:</p>
               <p className="text-lg font-semibold text-gray-800">{kot.odrobaczenie}</p>
             </div>
             <div className="border-b border-gray-200 pb-3">
-              <p className="text-sm text-gray-500 mb-1">Kastracja:</p>
+              <p className="text-sm text-muted mb-1">Kastracja:</p>
               <p className="text-lg font-semibold text-gray-800">{kot.kastracja}</p>
             </div>
             <div className="border-b border-gray-200 pb-3">
-              <p className="text-sm text-gray-500 mb-1">Stosunek do kotów:</p>
+              <p className="text-sm text-muted mb-1">Stosunek do kotów:</p>
               <p className="text-lg font-semibold text-gray-800">{kot.stosunekDoKotow}</p>
             </div>
             <div className="pb-3">
-              <p className="text-sm text-gray-500 mb-1">Stosunek do psów:</p>
+              <p className="text-sm text-muted mb-1">Stosunek do psów:</p>
               <p className="text-lg font-semibold text-gray-800">{kot.stosunekDoPsow}</p>
             </div>
           </div>
@@ -138,7 +138,7 @@ export default function Adoptuj() {
 
       <div className="bg-orange-50 rounded-2xl p-8 mb-8">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">Historia</h2>
-        <div className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
+        <div className="text-body text-lg leading-relaxed whitespace-pre-line">
           {kot.historia}
         </div>
       </div>
@@ -146,13 +146,13 @@ export default function Adoptuj() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <Link
           to={`/adopcja-ankieta/${kot.id}`}
-          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors shadow-lg flex items-center justify-center text-center"
+          className="btn btn-primary btn-rect btn-lg w-full"
         >
           Wypełnij ankietę adopcyjną
         </Link>
         <button 
           onClick={() => setShowZasadyModal(true)}
-          className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors shadow-lg"
+          className="btn btn-secondary btn-lg w-full"
         >
           Zasady adopcji
         </button>
@@ -160,7 +160,7 @@ export default function Adoptuj() {
 
       <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Adopcja wirtualna</h2>
-        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+        <p className="text-body text-lg leading-relaxed mb-6">
           Nie masz możliwości przyjęcia kotka pod swój dach? Istnieje opcja adopcji wirtualnej. 
           Możesz zadeklarować stały przelew na ulubionego kota. To nie musi być duża suma – liczy się 
           każdy grosz i za każdy będziemy wdzięczni. W zamian co miesiąc dostaniesz zdjęcie swojego 
@@ -168,7 +168,7 @@ export default function Adoptuj() {
         </p>
         <Link 
           to="/adopcja-wirtualna"
-          className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+          className="btn btn-primary btn-rect"
         >
           Dowiedz się więcej
         </Link>
@@ -196,7 +196,7 @@ export default function Adoptuj() {
             <div className="p-8">
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Wypełnij ankietę adopcyjną</h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-body text-lg leading-relaxed">
                   W tym miejscu trzeba wyjaśnić, że nie dostaniesz kota od ręki. Staramy się zapobiec sytuacji, kiedy zwierzak 
                   po kilku tygodniach wraca do nas – bo to się zdarza. Dlatego będziemy Cię prosić o wypełnienie ankiety adopcyjnej 
                   i pozwolenie na nasze odwiedziny. Chcemy poznać Ciebie i dom, do którego trafi nasz podopieczny. Porozmawiamy z Tobą 
@@ -207,7 +207,7 @@ export default function Adoptuj() {
               <div className="mt-8 flex justify-center">
                 <button 
                   onClick={() => setShowZasadyModal(false)}
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors"
+                  className="btn btn-primary btn-rect"
                 >
                   Zamknij
                 </button>

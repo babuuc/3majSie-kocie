@@ -1,6 +1,221 @@
 @import "tailwindcss";
 
-/* ── Animations ── */
+/* ══════════════════════════════════════════════════════════
+   DESIGN SYSTEM — Trzymaj Się, Kocie!
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Layout ── */
+
+.section-container {
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1280px) {
+  .section-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.section-container-narrow {
+  max-width: 72rem; /* max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1280px) {
+  .section-container-narrow {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ── Section Spacing ── */
+
+.section-hero {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .section-hero {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.section-content {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-content {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* ── Hero Gradient ── */
+
+.hero-gradient {
+  background: linear-gradient(to bottom right, #fff7ed, #ffffff, #fffbeb);
+  /* from-orange-50 via-white to-amber-50 */
+}
+
+/* ── Card Base ── */
+
+.card-base {
+  background-color: #fff;
+  border-radius: 1rem; /* rounded-2xl */
+  border: 1px solid #f3f4f6; /* border-gray-100 */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+.card-base-hover {
+  transition: box-shadow 0.2s ease;
+}
+
+.card-base-hover:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+/* ── Buttons ── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #f97316; /* orange-500 */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: #ea580c; /* orange-600 */
+}
+
+.btn-rect {
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #ea580c; /* orange-600 */
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid #fed7aa; /* orange-200 */
+}
+
+.btn-outline:hover {
+  border-color: #fdba74; /* orange-300 */
+  background-color: #fff7ed; /* orange-50 */
+}
+
+.btn-secondary {
+  background-color: #d1d5db; /* gray-300 */
+  color: #1f2937; /* gray-800 */
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background-color: #9ca3af; /* gray-400 */
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* ── Form Fields ── */
+
+.input-base {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  background-color: #f9fafb; /* gray-50 */
+  color: #111827; /* gray-900 */
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-base::placeholder {
+  color: #9ca3af; /* gray-400 */
+}
+
+.input-base:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #f97316; /* ring-2 ring-orange-500 */
+}
+
+/* ── Section Label (uppercase badge above headings) ── */
+
+.section-label {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f97316; /* orange-500 */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Typography ── */
+
+.heading-page {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+  line-height: 1.1;
+}
+
+@media (min-width: 1024px) {
+  .heading-page {
+    font-size: 3rem; /* text-5xl */
+  }
+}
+
+.heading-section {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700;
+  color: #1f2937; /* gray-800 */
+}
+
+@media (min-width: 1024px) {
+  .heading-section {
+    font-size: 1.875rem; /* text-3xl */
+  }
+}
+
+.text-body {
+  color: #4b5563; /* gray-600 */
+  line-height: 1.625;
+}
+
+.text-muted {
+  color: #6b7280; /* gray-500 */
+}
+
+/* ══════════════════════════════════════════════════════════
+   ANIMATIONS
+   ══════════════════════════════════════════════════════════ */
 
 @keyframes fade-in-up {
   from {

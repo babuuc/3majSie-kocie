@@ -42,16 +42,16 @@ export default function Adopcja() {
   return (
     <div>
       <div className="text-center py-12 bg-white">
-        <h1 className="text-5xl font-bold text-gray-800">Adopcja</h1>
+        <h1 className="heading-page text-5xl">Adopcja</h1>
       </div>
 
       <div className="bg-orange-100 py-16 px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="section-container">
           <div className="mb-12">
-            <p className="text-gray-700 text-lg mb-4">
+            <p className="text-body text-lg mb-4">
               Adopcja to jeden z podstawowych celów naszej działalności. Szukamy naszym podopiecznym domów na całe życie.
             </p>
-            <p className="text-gray-700 text-lg">
+            <p className="text-body text-lg">
               Jeśli szukasz kota dla siebie, być może znajdziesz go właśnie u nas.
             </p>
           </div>
@@ -67,14 +67,14 @@ export default function Adopcja() {
                   <span className="text-2xl font-bold text-orange-500">{step}</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">{title}</h3>
-                <p className="text-gray-700">{text}</p>
+                <p className="text-body">{text}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16">
+      <div className="section-container section-hero">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
           {categoriesWithCounts.map((category, index) => {
             const { apiImage, localPreview } = getCategoryPreviewImage(category.id, index);
@@ -94,7 +94,7 @@ export default function Adopcja() {
                 </div>
                 <div className="p-6 text-center bg-white">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{category.name}</h3>
-                  <p className="text-sm text-gray-500 font-medium tracking-wider">
+                  <p className="text-sm text-muted font-medium tracking-wider">
                     {category.count} {category.label}
                   </p>
                 </div>
