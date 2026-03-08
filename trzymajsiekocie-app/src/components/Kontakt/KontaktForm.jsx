@@ -15,7 +15,6 @@ export default function KontaktForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: integrate with backend / email service
     alert('Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.');
     setForm({ name: '', email: '', subject: '', message: '' });
   };

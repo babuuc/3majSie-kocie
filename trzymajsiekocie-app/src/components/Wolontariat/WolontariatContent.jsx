@@ -27,7 +27,6 @@ export default function WolontariatContent() {
     <section className="max-w-7xl mx-auto px-4 xl:px-8 py-14">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-        {/* Left — what we do */}
         <div>
           <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">Co robimy?</h2>
           <p className="text-gray-500 mb-6 leading-relaxed">
@@ -45,7 +44,6 @@ export default function WolontariatContent() {
           </div>
         </div>
 
-        {/* Right — who we look for + students */}
         <div className="space-y-8">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 lg:p-8">
             <h2 className="text-xl font-bold text-gray-800 mb-3">Kogo szukamy?</h2>
@@ -75,7 +73,6 @@ export default function WolontariatContent() {
         </div>
       </div>
 
-      {/* CTA */}
       <div className="mt-14 text-center bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl p-8 lg:p-12">
         <h2 className="text-2xl font-bold text-gray-800 mb-3">Dołącz do nas</h2>
         <p className="text-gray-500 max-w-md mx-auto mb-6">
