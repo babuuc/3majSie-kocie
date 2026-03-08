@@ -1,5 +1,7 @@
+import { useState, useCallback } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
+import SplashScreen from './components/SplashScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import GaleriaKotow from './pages/GaleriaKotow';
@@ -22,8 +24,12 @@ import AIAssistant from './components/AIAssistant';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
+  const [splashDone, setSplashDone] = useState(false);
+  const handleSplashFinished = useCallback(() => setSplashDone(true), []);
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-50 font-sans">
+      {!splashDone && <SplashScreen onFinished={handleSplashFinished} />}
       <ScrollToTop />
       <Header />
       
