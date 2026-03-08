@@ -26,8 +26,13 @@ function CatCarousel() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-80">
-        <div className="w-12 h-12 border-4 border-orange-300 border-t-orange-500 rounded-full animate-spin"></div>
+      <div className="max-w-3xl mx-auto">
+        <div className="w-full aspect-[4/3] bg-gray-200 animate-pulse rounded-2xl shadow-lg"></div>
+        <div className="flex justify-center gap-2 mt-4">
+          {[1,2,3,4,5].map(i => (
+             <div key={i} className="w-16 h-16 bg-gray-200 animate-pulse rounded-lg"></div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -88,42 +93,49 @@ export default function Home() {
   return (
     <div>
       {/* Hero – sekcja podatkowa */}
-      <section className="bg-gradient-to-br from-orange-500 via-orange-400 to-amber-400 text-white">
-        <div className="max-w-7xl mx-auto px-4 xl:px-8 py-20 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2 mb-8 text-sm font-medium">
+      <section className="relative bg-gradient-to-br from-orange-500 via-orange-400 to-amber-400 text-white pb-32">
+        <div className="max-w-7xl mx-auto px-4 xl:px-8 pt-20 text-center relative z-10">
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2 mb-8 text-sm font-medium animate-float">
             <Heart size={16} className="fill-white" />
             Pomóż naszym podopiecznym
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">
             Przekaż nam 1.5% podatku! 😻
           </h1>
 
-          <p className="text-xl md:text-2xl font-light mb-10 text-white/90 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl font-light mb-10 text-white/90 max-w-2xl mx-auto drop-shadow-sm">
             Twoja pomoc zmienia kocie życie. Wystarczy wpisać nasze dane w zeznaniu podatkowym.
           </p>
 
-          <div className="inline-block bg-white rounded-2xl shadow-2xl p-8 md:p-10 text-gray-800">
+          <div className="inline-block bg-white rounded-3xl shadow-2xl shadow-orange-900/20 p-8 md:p-10 text-gray-800">
             <div className="space-y-4">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wider text-orange-500">KRS</span>
-                <p className="text-3xl md:text-4xl font-bold tracking-widest mt-1">0000270261</p>
+                <span className="text-sm font-bold uppercase tracking-wider text-orange-500">KRS</span>
+                <p className="text-3xl md:text-4xl font-extrabold tracking-widest mt-1">0000270261</p>
               </div>
               <div className="w-full h-px bg-gray-200"></div>
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wider text-orange-500">Cel szczegółowy</span>
-                <p className="text-xl md:text-2xl font-bold mt-1">KOTY TSK 18947</p>
+                <span className="text-sm font-bold uppercase tracking-wider text-orange-500">Cel szczegółowy</span>
+                <p className="text-xl md:text-2xl font-extrabold mt-1">KOTY TSK 18947</p>
               </div>
             </div>
           </div>
         </div>
+
+        {/* FALA SVG na dole pomarańczowej sekcji */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+            <svg className="relative block w-full h-[60px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f9fafb"></path>
+            </svg>
+        </div>
       </section>
 
       {/* Sekcja – karuzela kotów */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-gray-50 py-12">
         <div className="max-w-7xl mx-auto px-4 xl:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-3">
               Poznaj naszych podopiecznych 😻
             </h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">

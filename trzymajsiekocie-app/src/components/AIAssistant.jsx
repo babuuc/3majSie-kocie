@@ -8,11 +8,11 @@ export default function AIAssistant() {
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          className="bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg p-3 flex items-center justify-center focus:outline-none border border-blue-200"
+          className="bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-orange-500/50 shadow-lg p-3 flex items-center justify-center focus:outline-none border-2 border-white animate-float transition-all hover:scale-110 cursor-pointer"
           aria-label="Otwórz asystenta AI"
-          style={{ width: 48, height: 48 }}
+          style={{ width: 64, height: 64 }}
         >
-          <span style={{ fontWeight: 700, fontSize: 20, letterSpacing: 1 }}>AI</span>
+          <span style={{ fontWeight: 800, fontSize: 24, letterSpacing: 1 }}>AI</span>
         </button>
       )}
       {open && (
