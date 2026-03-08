@@ -36,17 +36,17 @@ export default function Header() {
             <DropdownLink to="/adopcja-wirtualna">Adopcja wirtualna</DropdownLink>
           </NavDropdown>
 
+          <Link to="/wsparcie" className="hover:text-orange-500 transition-colors">Wsparcie</Link>
           <Link to="/dom-tymczasowy" className="hover:text-orange-500 transition-colors">Dom tymczasowy</Link>
           <Link to="/aktualnosci" className="hover:text-orange-500 transition-colors">Aktualności</Link>
-          <Link to="/kadra" className="hover:text-orange-500 transition-colors">Kadra</Link>
           <Link to="/kalendarz" className="hover:text-orange-500 transition-colors">Kalendarz</Link>
           <Link to="/wolontariat" className="hover:text-orange-500 transition-colors">Zostań wolontariuszem</Link>
 
           <NavDropdown label="O nas">
+            <DropdownLink to="/kadra">Kadra</DropdownLink>
             <DropdownLink to="/kontakt">Kontakt</DropdownLink>
             <DropdownLink to="/szczesliwe-historie">Szczęśliwe historie</DropdownLink>
             <DropdownLink to="/faq">FAQ</DropdownLink>
-            <DropdownLink to="/wsparcie">Wsparcie</DropdownLink>
           </NavDropdown>
           </nav>
         </div>
