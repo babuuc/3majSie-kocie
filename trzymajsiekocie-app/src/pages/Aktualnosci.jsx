@@ -57,10 +57,18 @@ const newsItems = [
   },
 ];
 
-function NewsBanner({ item }) {
+function NewsBanner({ item, isExpanded }) {
   return (
-    <div className="h-64 overflow-hidden rounded-2xl bg-gray-100 md:h-72 lg:h-80">
-      <img src={item.image} alt={item.imageAlt} className="h-full w-full object-cover" />
+    <div
+      className={`overflow-hidden rounded-2xl bg-gray-100 transition-all duration-500 ease-out ${
+        isExpanded ? 'h-72 md:h-80 lg:h-[26rem]' : 'h-64 md:h-72 lg:h-80'
+      }`}
+    >
+      <img
+        src={item.image}
+        alt={item.imageAlt}
+        className="h-full w-full object-cover transition-all duration-500 ease-out"
+      />
     </div>
   );
 }
@@ -95,7 +103,7 @@ export default function Aktualnosci() {
                 className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-lg"
               >
                 <div className="p-4 md:p-6">
-                  <NewsBanner item={item} />
+                  <NewsBanner item={item} isExpanded={isExpanded} />
                 </div>
 
                 <div className="px-6 pb-6 md:px-10 md:pb-10">
