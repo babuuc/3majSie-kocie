@@ -230,10 +230,10 @@ const AdoptionForm = ({ catName }) => {
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
   return (
-    <div className="h-[calc(100vh-96px)] min-h-[640px] w-full overflow-hidden bg-gray-100 flex items-center justify-center">
-      <div className="h-[80%] w-[70%] bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-[280px_minmax(0,1fr)]">
-        <div className="flex flex-col items-center justify-center p-6 md:p-8 bg-gradient-to-br from-orange-50 via-white to-amber-50 border-b md:border-b-0 md:border-r border-orange-100">
-          <div className="flex h-[220px] w-[220px] items-center justify-center md:h-[260px] md:w-[240px] overflow-hidden">
+    <div className="min-h-[calc(100vh-96px)] w-full bg-gray-100 flex items-center justify-center py-4 px-3 sm:px-4 md:py-6">
+      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-[280px_minmax(0,1fr)] md:h-[80vh] md:min-h-[640px]">
+        <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 bg-gradient-to-br from-orange-50 via-white to-amber-50 border-b md:border-b-0 md:border-r border-orange-100">
+          <div className="flex h-[120px] w-[120px] sm:h-[180px] sm:w-[180px] md:h-[260px] md:w-[240px] items-center justify-center overflow-hidden">
             <img
               src={currentGif}
               alt={`Kot dla kroku ${step}`}
@@ -242,7 +242,7 @@ const AdoptionForm = ({ catName }) => {
           </div>
           <p className="mt-0 text-center text-sm font-medium text-orange-700">Krok {step} z {totalSteps}</p>
         </div>
-        <div className="min-h-0 px-5 pb-5 pt-0 md:px-6 md:pb-6 md:pt-0 lg:px-8 lg:pb-8 lg:pt-0 flex flex-col">
+        <div className="min-h-0 px-4 pb-4 pt-0 sm:px-5 sm:pb-5 md:px-6 md:pb-6 md:pt-0 lg:px-8 lg:pb-8 lg:pt-0 flex flex-col overflow-y-auto">
           {catName && (
             <div className="mt-3 mb-3 flex justify-center shrink-0">
               <p className="text-sm font-medium text-gray-700">
@@ -260,7 +260,7 @@ const AdoptionForm = ({ catName }) => {
             <h1 className="text-xl font-bold text-gray-800">Ankieta Adopcyjna</h1>
           </div>
           <form className="flex-1 min-h-0 flex flex-col" onSubmit={e => e.preventDefault()}>
-            <div className="flex-1 min-h-0 overflow-hidden">{steps[step - 1]}</div>
+            <div className="flex-1 min-h-0 overflow-y-auto">{steps[step - 1]}</div>
             <div className="flex justify-between mt-0 pt-0 border-t border-gray-100 shrink-0">
               <button
                 type="button"
