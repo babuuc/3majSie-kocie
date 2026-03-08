@@ -1,7 +1,0 @@
-.cat-card {
-  cursor: pointer;
-}
-
-.cat-card:hover {
-  transform: translateY(-4px);
-}

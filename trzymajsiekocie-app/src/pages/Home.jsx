@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Heart } from 'lucide-react';
+import FadeIn from '../components/FadeIn';
 
 function CatCarousel() {
   const [cats, setCats] = useState([]);
@@ -38,12 +39,11 @@ function CatCarousel() {
   }
 
   if (cats.length === 0) {
-    return <p className="text-center text-gray-500">Nie udało się załadować zdjęć kotów.</p>;
+    return <p className="text-center text-muted">Nie udało się załadować zdjęć kotów.</p>;
   }
 
   return (
     <div className="relative max-w-3xl mx-auto">
-      {/* Główne zdjęcie */}
       <div className="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3] bg-gray-100">
         <img
           src={cats[current].url}
@@ -51,7 +51,6 @@ function CatCarousel() {
           className="w-full h-full object-cover transition-opacity duration-500"
         />
 
-        {/* Strzałki */}
         <button
           onClick={prev}
           className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-md transition-colors"
@@ -65,13 +64,11 @@ function CatCarousel() {
           <ChevronRight size={22} className="text-gray-700" />
         </button>
 
-        {/* Licznik */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white text-sm px-3 py-1 rounded-full">
           {current + 1} / {cats.length}
         </div>
       </div>
 
-      {/* Miniaturki */}
       <div className="flex justify-center gap-2 mt-4 flex-wrap">
         {cats.map((cat, i) => (
           <button
@@ -92,23 +89,22 @@ function CatCarousel() {
 export default function Home() {
   return (
     <div>
-      {/* Hero – sekcja podatkowa */}
-      <section className="relative bg-gradient-to-br from-orange-500 via-orange-400 to-amber-400 text-white pb-32">
-        <div className="max-w-7xl mx-auto px-4 xl:px-8 pt-20 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2 mb-8 text-sm font-medium animate-float">
+      <section className="bg-gradient-to-br from-orange-500 via-orange-400 to-amber-400 text-white">
+        <div className="section-container py-20 text-center">
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-5 py-2 mb-8 text-sm font-medium animate-fade-in">
             <Heart size={16} className="fill-white" />
             Pomóż naszym podopiecznym
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight animate-fade-in-up delay-100">
             Przekaż nam 1.5% podatku! 😻
           </h1>
 
-          <p className="text-xl md:text-2xl font-light mb-10 text-white/90 max-w-2xl mx-auto drop-shadow-sm">
+          <p className="text-xl md:text-2xl font-light mb-10 text-white/90 max-w-2xl mx-auto animate-fade-in-up delay-200">
             Twoja pomoc zmienia kocie życie. Wystarczy wpisać nasze dane w zeznaniu podatkowym.
           </p>
 
-          <div className="inline-block bg-white rounded-3xl shadow-2xl shadow-orange-900/20 p-8 md:p-10 text-gray-800">
+          <div className="inline-block bg-white rounded-2xl shadow-2xl p-8 md:p-10 text-gray-800 animate-fade-in-scale delay-400">
             <div className="space-y-4">
               <div>
                 <span className="text-sm font-bold uppercase tracking-wider text-orange-500">KRS</span>
@@ -131,37 +127,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sekcja – karuzela kotów */}
-      <section className="bg-gray-50 py-12">
-        <div className="max-w-7xl mx-auto px-4 xl:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-3">
-              Poznaj naszych podopiecznych 😻
-            </h2>
-            <p className="text-gray-500 text-lg max-w-xl mx-auto">
-              Każdy z nich czeka na kochający dom. Może to właśnie Ty będziesz ich nowym opiekunem?
-            </p>
-          </div>
+      <section className="bg-gray-50 py-20">
+        <div className="section-container">
+          <FadeIn>
+            <div className="text-center mb-12">
+              <h2 className="heading-section text-3xl md:text-4xl mb-3">
+                Poznaj naszych podopiecznych 😻
+              </h2>
+              <p className="text-body text-lg max-w-xl mx-auto">
+                Każdy z nich czeka na kochający dom. Może to właśnie Ty będziesz ich nowym opiekunem?
+              </p>
+            </div>
+          </FadeIn>
 
-          <CatCarousel />
+          <FadeIn delay={150}>
+            <CatCarousel />
+          </FadeIn>
         </div>
       </section>
 
-      {/* Sekcja – jak pomóc */}
       <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 xl:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6">
-            Jak możesz pomóc?
-          </h2>
+        <div className="section-container">
+          <FadeIn>
+            <h2 className="heading-section text-3xl md:text-4xl text-center mb-6">
+              Jak możesz pomóc?
+            </h2>
 
-          <p className="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-14">
-            Pod opieką mamy aktualnie <span className="font-bold text-orange-500">ponad 100 kotów</span>.
-          </p>
+            <p className="text-center text-lg text-body max-w-2xl mx-auto mb-14">
+              Pod opieką mamy aktualnie <span className="font-bold text-orange-500">ponad 100 kotów</span>.
+            </p>
+          </FadeIn>
 
-          {/* Karmy / sklep */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {/* Ocalone Łapki */}
-            <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow border border-orange-100">
+            <FadeIn delay={0}>
+              <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow border border-orange-100 hover:-translate-y-1 transition-transform duration-300">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-5 text-3xl">
                 🛒
               </div>
@@ -174,14 +173,15 @@ export default function Home() {
                 href="https://ocalonelapki.pl/organizacja/331/trzymaj-sie-kocie"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-colors shadow-md hover:shadow-lg"
+                className="btn btn-primary"
               >
                 Sprezentuj naszym kotom karmę 🧡
               </a>
             </div>
+            </FadeIn>
 
-            {/* Suppi */}
-            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow border border-rose-100">
+            <FadeIn delay={150}>
+            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow border border-rose-100 hover:-translate-y-1 transition-transform duration-300">
               <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-5 text-3xl">
                 😻
               </div>
@@ -198,9 +198,10 @@ export default function Home() {
                 Postaw saszetkę na Suppi 🐾
               </a>
             </div>
+            </FadeIn>
           </div>
 
-          {/* Zrzutka widget */}
+          <FadeIn>
           <div className="max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-800 text-center mb-6">Wesprzyj nas na Zrzutka.pl</h3>
             <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ paddingBottom: '450px' }}>
@@ -213,6 +214,7 @@ export default function Home() {
               ></iframe>
             </div>
           </div>
+          </FadeIn>
         </div>
       </section>
     </div>

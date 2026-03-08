@@ -50,12 +50,12 @@ export default function HistorieGrid() {
   const { images, loading } = useCatImages(stories.length);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 xl:px-8 py-14">
+    <section className="section-container section-content">
       <div className="mb-10 text-center">
-        <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-3">
+        <h2 className="heading-section mb-3">
           Poznaj ich historie
         </h2>
-        <p className="text-gray-500 max-w-lg mx-auto">
+        <p className="text-body max-w-lg mx-auto">
           Każdy z tych kotów przeszedł długą drogę — z ulicy do ciepłego domu.
         </p>
       </div>

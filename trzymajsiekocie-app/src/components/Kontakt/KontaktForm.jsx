@@ -15,16 +15,15 @@ export default function KontaktForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: integrate with backend / email service
     alert('Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.');
     setForm({ name: '', email: '', subject: '', message: '' });
   };
 
   const inputClass =
-    'w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-colors';
+    'input-base';
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 lg:p-8 h-full">
+    <div className="card-base p-6 lg:p-8 h-full">
       <h2 className="text-xl font-bold text-gray-800 mb-6">Napisz do nas</h2>
 
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -94,7 +93,7 @@ export default function KontaktForm() {
 
         <button
           type="submit"
-          className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors cursor-pointer"
+          className="btn btn-primary btn-rect"
         >
           <Send size={18} />
           Wyślij wiadomość

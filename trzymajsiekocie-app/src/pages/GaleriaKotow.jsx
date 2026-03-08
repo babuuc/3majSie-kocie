@@ -1,44 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import './GaleriaKotow.css';
 import kotyData from '../data/koty.json';
 import useCatImages from '../hooks/useCatImages';
-
-function CatImage({ apiImage, localImage, color, altText }) {
-  const [src, setSrc] = useState(apiImage || localImage);
-  const [failed, setFailed] = useState(false);
-
-  useEffect(() => {
-    if (apiImage) {
-      setSrc(apiImage);
-      setFailed(false);
-    }
-  }, [apiImage]);
-
-  if (failed || !src) {
-    return (
-      <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold" style={{ backgroundColor: color }}>
-        🐱
-      </div>
-    );
-  }
-
-  return (
-    <img
-      src={src}
-      alt={altText}
-      className="w-full h-full object-cover"
-      loading="lazy"
-      onError={() => {
-        if (localImage && src !== localImage) {
-          setSrc(localImage);
-        } else {
-          setFailed(true);
-        }
-      }}
-    />
-  );
-}
+import CatImage from '../components/CatImage';
 
 export default function GaleriaKotow() {
   const [searchParams] = useSearchParams();
@@ -81,11 +45,10 @@ export default function GaleriaKotow() {
     : allCats.filter(cat => selectedCategories.includes(cat.category));
 
   return (
-    <div className="max-w-7xl mx-auto px-4 xl:px-8 py-16">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8">Galeria kotów do adopcji</h1>
+    <div className="section-container section-hero">
+      <h1 className="heading-page mb-8">Galeria kotów do adopcji</h1>
 
-      {/* Filtry - checkboxy */}
-      <div className="mb-12 bg-white rounded-lg shadow-md p-6">
+      <div className="mb-12 card-base p-6">
         <h2 className="text-xl font-bold text-gray-800 mb-4">Filtruj po kategorii:</h2>
         <div className="flex flex-wrap gap-4">
           {categories.map((category) => (
@@ -97,7 +60,7 @@ export default function GaleriaKotow() {
                 type="checkbox"
                 checked={category.id === 'wszystkie' ? selectedCategories.length === 0 : selectedCategories.includes(category.id)}
                 onChange={() => handleCategoryToggle(category.id)}
-                className="w-5 h-5 rounded text-blue-600"
+                className="w-5 h-5 rounded accent-orange-500"
               />
               <span 
                 className="w-4 h-4 rounded-full"
@@ -109,7 +72,6 @@ export default function GaleriaKotow() {
         </div>
       </div>
 
-      {/* Galeria kotów */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {filteredCats.map((cat) => {
           const originalIndex = allCats.findIndex(c => c.id === cat.id);
@@ -119,7 +81,6 @@ export default function GaleriaKotow() {
             to={`/adoptuj/${cat.id}`}
             className="cat-card rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
-            {/* Zdjęcie kota */}
             <div 
               className="aspect-square overflow-hidden"
               style={{ 
@@ -134,12 +95,11 @@ export default function GaleriaKotow() {
               />
             </div>
             
-            {/* Informacje o kocie */}
             <div className="p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-2">{cat.name}</h3>
               <p className="text-sm text-gray-600 mb-1">{cat.age}</p>
-              <p className="text-sm text-gray-500 capitalize">{categories.find(c => c.id === cat.category)?.name}</p>
-              <button className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+              <p className="text-sm text-muted capitalize">{categories.find(c => c.id === cat.category)?.name}</p>
+              <button className="mt-4 w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
                 Zobacz profil
               </button>
             </div>
@@ -150,7 +110,7 @@ export default function GaleriaKotow() {
 
       {filteredCats.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">Brak kotów w wybranych kategoriach</p>
+          <p className="text-muted text-lg">Brak kotów w wybranych kategoriach</p>
         </div>
       )}
     </div>

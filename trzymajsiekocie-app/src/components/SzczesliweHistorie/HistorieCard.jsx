@@ -2,7 +2,7 @@ import { Heart } from 'lucide-react';
 
 export default function HistorieCard({ name, image, description, adoptedDate, loading }) {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-md transition-shadow">
+    <div className="card-base card-base-hover overflow-hidden group">
       <div className="relative h-56 overflow-hidden bg-gray-100">
         {loading ? (
           <div className="w-full h-full flex items-center justify-center">
@@ -28,7 +28,7 @@ export default function HistorieCard({ name, image, description, adoptedDate, lo
             <span className="text-xs text-gray-400 font-medium">{adoptedDate}</span>
           )}
         </div>
-        <p className="text-sm text-gray-500 leading-relaxed">{description}</p>
+        <p className="text-sm text-muted leading-relaxed">{description}</p>
       </div>
     </div>
   );

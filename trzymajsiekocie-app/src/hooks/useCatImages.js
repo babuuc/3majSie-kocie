@@ -12,7 +12,6 @@ export default function useCatImages(count = 1) {
 
     let cancelled = false;
 
-    // The Cat API limits to 10 per request, so batch if needed
     const batchSize = 10;
     const requests = [];
     for (let i = 0; i < safeCount; i += batchSize) {

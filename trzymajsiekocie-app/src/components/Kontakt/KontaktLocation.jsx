@@ -2,7 +2,7 @@ import { MapPin } from 'lucide-react';
 
 export default function KontaktLocation() {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 lg:p-8 space-y-5">
+    <div className="card-base p-6 lg:p-8 space-y-5">
       <h2 className="text-xl font-bold text-gray-800">Nasza lokalizacja</h2>
 
       <div className="flex items-start gap-3 text-gray-600 text-sm">
@@ -12,7 +12,7 @@ export default function KontaktLocation() {
         <div className="pt-1.5">
           <p className="font-semibold text-gray-800">Fantownia</p>
           <p>ul. Struga 16, 80-122 Gdańsk</p>
-          <p className="text-gray-500 mt-0.5">domofon nr 6</p>
+          <p className="text-muted mt-0.5">domofon nr 6</p>
         </div>
       </div>
 

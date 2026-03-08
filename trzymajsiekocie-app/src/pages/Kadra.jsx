@@ -48,22 +48,22 @@ const teamMembers = [
 export default function Kadra() {
   return (
     <div className="bg-gradient-to-b from-orange-50 via-white to-amber-50">
-      <section className="max-w-6xl mx-auto px-4 xl:px-8 py-16 lg:py-24">
+      <section className="section-container section-hero">
         <div className="max-w-4xl mx-auto text-center mb-12 lg:mb-16">
-          <span className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-[0.2em] mb-4">
+          <span className="section-label">
             O nas
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">
             Stowarzyszenie Trzymaj Się, Kocie!
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-body text-lg md:text-xl max-w-3xl mx-auto">
             Jesteśmy grupą osób z Trójmiasta, które nie potrafią żyć bez pomagania. Codziennie uczymy się,
             jak skuteczniej poprawiać los bezdomnych kotów i działać tam, gdzie pomoc jest naprawdę potrzebna.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.35fr_0.8fr] gap-8 items-start">
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-orange-100 p-8 md:p-10 lg:p-12 space-y-6 text-left">
+          <div className="card-base bg-white/90 backdrop-blur-sm shadow-xl border-orange-100 p-8 md:p-10 lg:p-12 space-y-6 text-left">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Kim jesteśmy?</h2>
               <p className="text-gray-600 leading-8">
@@ -74,13 +74,13 @@ export default function Kadra() {
               </p>
             </div>
 
-            <p className="text-gray-600 leading-8">
+            <p className="text-body leading-8">
               Działamy najskuteczniej, jak potrafimy. Nie cofamy się przed najtrudniejszymi akcjami, z których
               rezygnują państwowe służby. Tak wygląda nasz „wolny czas”. Poza nim mamy rodziny, pracę i własne
               życie. W TSK! działamy bezpłatnie, finansując działania z pieniędzy, które uzbieramy.
             </p>
 
-            <p className="text-gray-600 leading-8">
+            <p className="text-body leading-8">
               Chcemy zaprosić do TSK! jak najszersze grono osób, którym nieobojętny jest los zwierząt. Dlatego
               nie założyliśmy fundacji. Grupa wolontariuszy, choćby najsprawniejsza, będzie tylko grupą
               wolontariuszy. Jako społeczność skupiona wokół idei poprawienia kociego, i nie tylko kociego,
@@ -90,12 +90,12 @@ export default function Kadra() {
 
             <div className="rounded-2xl bg-orange-50 border border-orange-100 p-6">
               <p className="text-base md:text-lg font-semibold text-gray-800 mb-2">Wszystko to jest zapisane w naszym Statucie.</p>
-              <p className="text-gray-600 leading-7">
+              <p className="text-body">
                 Jeśli też uważasz, że w grupie można zdziałać więcej, przyłącz się do nas.
               </p>
               <Link
                 to="/dokumenty"
-                className="inline-flex items-center justify-center mt-5 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-colors"
+                className="btn btn-primary mt-5"
               >
                 Statut
               </Link>
@@ -103,7 +103,7 @@ export default function Kadra() {
           </div>
 
           <aside className="lg:sticky lg:top-24 space-y-6">
-            <div className="bg-gradient-to-br from-orange-500 to-amber-400 rounded-3xl shadow-xl p-8 text-white">
+            <div className="bg-gradient-to-br from-orange-500 to-amber-400 rounded-2xl shadow-xl p-8 text-white">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/80 mb-3">TSK!</p>
               <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-4">
                 Chcesz być z nami w kontakcie?
@@ -115,14 +115,14 @@ export default function Kadra() {
 
               <Link
                 to="/kontakt"
-                className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-orange-600 hover:text-orange-700 hover:bg-orange-50 font-semibold px-7 py-3.5 rounded-full shadow-md transition-colors"
+                className="btn btn-primary w-full sm:w-auto bg-white text-orange-600 hover:text-orange-700 hover:bg-orange-50"
               >
                 Napisz do nas 💌
               </Link>
             </div>
 
-            <div className="bg-white rounded-3xl border border-gray-100 shadow-lg p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-400 mb-3">Dlaczego działamy</p>
+            <div className="card-base shadow-lg p-6">
+              <p className="section-label text-gray-400">Dlaczego działamy</p>
               <p className="text-gray-600 leading-7">
                 Bo każdy kot zasługuje na bezpieczeństwo, leczenie i szansę na lepsze życie, a wspólne działanie
                 daje realną sprawczość.
@@ -132,13 +132,13 @@ export default function Kadra() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 xl:px-8 pb-20 lg:pb-24">
+      <section className="section-container pb-20 lg:pb-24">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-[0.2em] mb-4">
+          <span className="section-label">
             Nasza kadra
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Poznaj osoby, które tworzą TSK!</h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-body text-lg">
             Każda z tych osób wnosi do stowarzyszenia inny rodzaj siły, doświadczenia i energii. Razem robimy
             rzeczy, których osobno nie dałoby się udźwignąć.
           </p>
@@ -148,7 +148,7 @@ export default function Kadra() {
           {teamMembers.map((member, index) => (
             <article
               key={`${member.name}-${index}`}
-              className="bg-white/90 backdrop-blur-sm rounded-3xl border border-orange-100 shadow-lg p-6 md:p-7 flex flex-col sm:flex-row gap-6 hover:shadow-xl transition-shadow"
+              className="card-base bg-white/90 backdrop-blur-sm border-orange-100 shadow-lg p-6 md:p-7 flex flex-col sm:flex-row gap-6 card-base-hover"
             >
               <div className="sm:w-40 sm:flex-shrink-0 flex justify-center sm:justify-start">
                 <div
@@ -159,8 +159,8 @@ export default function Kadra() {
               </div>
 
               <div className="text-center sm:text-left">
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{member.name}</h3>
-                <p className="text-gray-600 leading-8 text-[15px] md:text-base">{member.description}</p>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">{member.name}</h3>
+                <p className="text-body text-[15px] md:text-base">{member.description}</p>
               </div>
             </article>
           ))}
