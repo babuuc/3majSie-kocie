@@ -125,11 +125,14 @@ export default function Home() {
 
             {/* Hero placeholder image */}
             <div className="hidden lg:flex justify-center animate-fade-in delay-300">
-              <div className="img-placeholder w-full max-w-md aspect-square rounded-3xl border-white/20 bg-white/10 backdrop-blur-sm text-white/60 border-2 border-dashed">
-                <div className="text-center">
-                  <span className="text-6xl block mb-3">🐱</span>
-                  <span className="text-sm font-medium">Ilustracja / Zdjęcie<br />800×800</span>
-                </div>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-white/20 rounded-[2rem] blur-2xl" />
+                <img
+                  src="/src/assets/home_page_cat.png"
+                  alt="Kot - Trzymaj się, Kocie!"
+                  className="relative w-full max-w-md aspect-square rounded-3xl object-cover border-4 border-white/30"
+                  style={{ boxShadow: '0 25px 60px -12px rgba(0, 0, 0, 0.35), 0 0 40px rgba(255, 255, 255, 0.15)' }}
+                />
               </div>
             </div>
           </div>
