@@ -3,7 +3,7 @@ import loveLogo from '../../assets/love.png';
 export default function WsparcieHero() {
   return (
     <section className="relative hero-gradient overflow-hidden">
-      <div className="section-container section-hero">
+      <div className="section-container pt-2 pb-5 md:pt-3 md:pb-6 lg:pt-3 lg:pb-7">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
           <div className="lg:col-span-2">
             <span className="section-label">
