@@ -43,7 +43,7 @@ export default function Adopcja() {
     <div>
       <section className="relative hero-gradient overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-orange-200/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-        <div className="section-container section-hero">
+        <div className="section-container py-7 md:py-8 lg:py-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="section-label">Znajdź swojego kota</span>
             <h1 className="heading-page mb-4">Adopcja</h1>
@@ -54,7 +54,7 @@ export default function Adopcja() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-orange-100 to-orange-50 py-14 lg:py-16 px-4">
+      <section className="bg-gradient-to-b from-orange-100 to-orange-50 pt-12 pb-14 lg:pt-14 lg:pb-16 px-4">
         <div className="section-container">
           <div className="max-w-2xl mb-12">
             <h2 className="heading-section mb-4">Jak wygląda proces adopcji?</h2>
