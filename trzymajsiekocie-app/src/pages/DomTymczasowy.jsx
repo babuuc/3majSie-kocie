@@ -13,7 +13,7 @@ const infoCards = [
     icon: Package,
     title: 'Co zapewniamy domowi tymczasowemu?',
     description:
-      'Jeśli zdecydujesz się wziąć kota na tymczas, dostaniesz od nas wyprawkę i zaopatrzenie. Do lecznic będziesz jeździć na nasz rachunek, chyba że zadeklarujesz samodzielne finansowanie. To zależy wyłącznie od Ciebie.',
+      'Jeśli zdecydujesz się przyjąć kota do domu tymczasowego, dostaniesz od nas wyprawkę i zaopatrzenie. Do lecznic będziesz jeździć na nasz koszt, chyba że zadeklarujesz samodzielne finansowanie. To zależy wyłącznie od Ciebie.',
   },
   {
     icon: ClipboardList,
@@ -29,16 +29,16 @@ const infoCards = [
   },
   {
     icon: HeartHandshake,
-    title: 'Dlaczego warto zostać DT?',
+    title: 'Dlaczego warto zostać domem tymczasowym?',
     description:
-      'Tymczasowanie to świetna opcja, jeśli chcesz się przekonać, czy nowy kot dogada się z Twoim kotem lub psem. Albo czy w ogóle Ty plus kot to dobry pomysł. A najfajniejsze jest to, że dom tymczasowy ma pierwszeństwo przy adopcji.',
+      'Prowadzenie domu tymczasowego to świetna opcja, jeśli chcesz się przekonać, czy nowy kot dogada się z Twoim kotem lub psem. To także dobry sposób, by sprawdzić, czy wspólne życie z kotem jest dla Ciebie. A najfajniejsze jest to, że dom tymczasowy ma pierwszeństwo przy adopcji.',
   },
 ];
 
 const steps = [
   'Wypełniasz ankietę i dajesz nam znać, że chcesz pomóc.',
   'Poznajemy się i rozmawiamy o warunkach, jakie możesz zapewnić kotu.',
-  'Ustalamy, jaki kot i jaka forma tymczasu będą dla Ciebie odpowiednie.',
+  'Ustalamy, jaki kot i jaka forma domu tymczasowego będą dla Ciebie odpowiednie.',
 ];
 
 export default function DomTymczasowy() {
@@ -56,7 +56,7 @@ export default function DomTymczasowy() {
                 Dom tymczasowy to najlepsza alternatywa dla schroniska.
               </h1>
               <p className="text-lg text-gray-600 max-w-2xl leading-relaxed">
-                Dom tymczasowy, inaczej tymczas albo DT, to podstawowa komórka rodzinna w naszym stowarzyszeniu.
+                Dom tymczasowy to podstawowa komórka rodzinna w naszym stowarzyszeniu.
                 To dom, w którym kot mieszka, aż zgłoszą się chętni do adopcji.
               </p>
 
@@ -108,10 +108,10 @@ export default function DomTymczasowy() {
       <section className="max-w-7xl mx-auto px-4 xl:px-8 py-14 lg:py-16">
         <div className="mb-10 max-w-2xl">
           <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-3">
-            Najważniejsze informacje o DT
+            Najważniejsze informacje o domu tymczasowym
           </h2>
           <p className="text-gray-500 leading-relaxed">
-            Jeśli rozważasz tymczasowanie, poniżej znajdziesz najważniejsze odpowiedzi na pytania, które pojawiają się najczęściej.
+            Jeśli rozważasz prowadzenie domu tymczasowego, poniżej znajdziesz najważniejsze odpowiedzi na pytania, które pojawiają się najczęściej.
           </p>
         </div>
 
@@ -171,7 +171,7 @@ export default function DomTymczasowy() {
               Odezwij się do nas i zrób pierwszy krok do zostania domem tymczasowym.
             </h2>
             <p className="text-gray-300 leading-relaxed">
-              Tymczasowanie pozwala realnie uratować kota i jednocześnie sprawdzić, czy wspólne życie z nim jest dla Ciebie dobrą drogą.
+              Prowadzenie domu tymczasowego pozwala realnie uratować kota i jednocześnie sprawdzić, czy wspólne życie z nim jest dla Ciebie dobrą drogą.
             </p>
           </div>
 
