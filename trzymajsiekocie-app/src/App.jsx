@@ -18,6 +18,7 @@ import Kalendarz from './pages/Kalendarz';
 import Dokumenty from './pages/Dokumenty';
 import Wolontariat from './pages/Wolontariat';
 import AdopcjaAnkieta from './pages/AdopcjaAnkieta';
+import AIAssistant from './components/AIAssistant';
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <AIAssistant />
     </div>
   );
 }
