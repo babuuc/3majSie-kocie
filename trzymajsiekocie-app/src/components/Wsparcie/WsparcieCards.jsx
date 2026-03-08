@@ -146,7 +146,7 @@ function WsparcieCard({ icon: Icon, title, description, link, externalLink }) {
 
 export default function WsparcieCards() {
   return (
-    <section className="section-container pt-3 pb-12 md:pt-4 md:pb-14 lg:pt-5 lg:pb-16">
+    <section className="section-container section-content">
       <div className="mb-12 text-center">
         <span className="section-label">Pomoc</span>
         <h2 className="heading-section mb-3">

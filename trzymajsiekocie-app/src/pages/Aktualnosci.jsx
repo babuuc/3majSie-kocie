@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CalendarDays, ChevronDown, ChevronUp, Clock3, MapPin } from 'lucide-react';
+import { CalendarDays, ChevronDown, ChevronUp, Clock3, MapPin, Newspaper } from 'lucide-react';
 import bazarekImage from '../assets/Bazarek.jpg';
 import niedzielaImage from '../assets/niedziela.png';
 
@@ -59,8 +59,8 @@ const newsItems = [
 
 function NewsBanner({ item }) {
   return (
-    <div className="h-64 overflow-hidden rounded-2xl bg-gray-100 md:h-72 lg:h-80">
-      <img src={item.image} alt={item.imageAlt} className="h-full w-full object-cover" />
+    <div className="overflow-hidden rounded-2xl bg-gray-100">
+      <img src={item.image} alt={item.imageAlt} className="h-auto w-full object-cover" />
     </div>
   );
 }
@@ -71,20 +71,24 @@ export default function Aktualnosci() {
   return (
     <div>
       <section className="relative overflow-hidden hero-gradient">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_left_center,_rgba(251,146,60,0.16),_transparent_32%),radial-gradient(circle_at_right_center,_rgba(14,165,233,0.12),_transparent_30%)]" />
-        <div className="relative section-container py-4 md:py-5 lg:py-6">
+        <div className="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top_left,_rgba(251,146,60,0.16),_transparent_35%),radial-gradient(circle_at_top_right,_rgba(14,165,233,0.12),_transparent_30%)]" />
+        <div className="relative section-container section-hero">
           <div className="max-w-3xl">
-            <h1 className="heading-page">
+            <span className="inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-2 text-sm font-semibold text-orange-700">
+              <Newspaper size={16} />
+              Bądź na bieżąco
+            </span>
+            <h1 className="mt-5 heading-page">
               Aktualności, wydarzenia i bazarki
             </h1>
-            <p className="mt-1 text-body text-lg max-w-2xl">
+            <p className="mt-4 text-body text-lg max-w-2xl">
               Zebraliśmy tutaj najnowsze informacje o naszych akcjach, spotkaniach i inicjatywach. Każdy wpis możesz rozwinąć, żeby zobaczyć pełne szczegóły.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section-container pt-1 pb-12 md:pt-2 md:pb-14 lg:pt-3 lg:pb-[4.5rem]">
+      <section className="section-container section-content">
         <div className="space-y-10">
           {newsItems.map((item) => {
             const isExpanded = expandedId === item.id;
