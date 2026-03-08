@@ -176,7 +176,7 @@ const AdoptionForm = ({ catName }) => {
         <h2 className={titleClass}>IV. Bezpieczeństwo</h2>
         <div className={`${fieldsGridClass} mt-4`}>
           <div className={fullWidthFieldClass}>
-            <label className={labelClass}>Zabezpieczenia</label>
+            <label className={labelClass}>Jakie zabezpieczenia są zainstalowane?</label>
             <div className={radioGroupClass}>
               <label className={radioLabelClass}>
                 <input type="checkbox" disabled className="rounded accent-orange-500" />
@@ -186,6 +186,10 @@ const AdoptionForm = ({ catName }) => {
                 <input type="checkbox" disabled className="rounded accent-orange-500" />
                 <span>Zabezpieczone okna</span>
               </label>
+            </div>
+            <div className="mt-3 max-w-sm">
+              <label className={labelClass}>Inne:</label>
+              <input className={inputClass} placeholder="Wpisz inne zabezpieczenia" disabled />
             </div>
           </div>
         </div>
